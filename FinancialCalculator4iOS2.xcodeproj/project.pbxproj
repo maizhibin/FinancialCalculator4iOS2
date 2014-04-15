@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B088451F18FD6532005CE944 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B088451E18FD6532005CE944 /* Foundation.framework */; };
+		B088452118FD6532005CE944 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B088452018FD6532005CE944 /* CoreGraphics.framework */; };
+		B088452318FD6532005CE944 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B088452218FD6532005CE944 /* UIKit.framework */; };
+		B088452918FD6532005CE944 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B088452718FD6532005CE944 /* InfoPlist.strings */; };
+		B088452B18FD6532005CE944 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B088452A18FD6532005CE944 /* main.m */; };
+		B088452F18FD6532005CE944 /* FCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B088452E18FD6532005CE944 /* FCAppDelegate.m */; };
+		B088453218FD6532005CE944 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B088453018FD6532005CE944 /* Main.storyboard */; };
+		B088453518FD6532005CE944 /* FCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B088453418FD6532005CE944 /* FCViewController.m */; };
+		B088453718FD6532005CE944 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B088453618FD6532005CE944 /* Images.xcassets */; };
+		B088453E18FD6532005CE944 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B088453D18FD6532005CE944 /* XCTest.framework */; };
+		B088453F18FD6532005CE944 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B088451E18FD6532005CE944 /* Foundation.framework */; };
+		B088454018FD6532005CE944 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B088452218FD6532005CE944 /* UIKit.framework */; };
+		B088454818FD6532005CE944 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B088454618FD6532005CE944 /* InfoPlist.strings */; };
+		B088454A18FD6532005CE944 /* FinancialCalculator4iOS2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = B088454918FD6532005CE944 /* FinancialCalculator4iOS2Tests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B088454118FD6532005CE944 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B088451318FD6532005CE944 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B088451A18FD6532005CE944;
+			remoteInfo = FinancialCalculator4iOS2;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B088451B18FD6532005CE944 /* FinancialCalculator4iOS2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinancialCalculator4iOS2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B088451E18FD6532005CE944 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B088452018FD6532005CE944 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B088452218FD6532005CE944 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B088452618FD6532005CE944 /* FinancialCalculator4iOS2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FinancialCalculator4iOS2-Info.plist"; sourceTree = "<group>"; };
+		B088452818FD6532005CE944 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B088452A18FD6532005CE944 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B088452C18FD6532005CE944 /* FinancialCalculator4iOS2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FinancialCalculator4iOS2-Prefix.pch"; sourceTree = "<group>"; };
+		B088452D18FD6532005CE944 /* FCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCAppDelegate.h; sourceTree = "<group>"; };
+		B088452E18FD6532005CE944 /* FCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCAppDelegate.m; sourceTree = "<group>"; };
+		B088453118FD6532005CE944 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B088453318FD6532005CE944 /* FCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCViewController.h; sourceTree = "<group>"; };
+		B088453418FD6532005CE944 /* FCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCViewController.m; sourceTree = "<group>"; };
+		B088453618FD6532005CE944 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B088453C18FD6532005CE944 /* FinancialCalculator4iOS2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinancialCalculator4iOS2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B088453D18FD6532005CE944 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		B088454518FD6532005CE944 /* FinancialCalculator4iOS2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FinancialCalculator4iOS2Tests-Info.plist"; sourceTree = "<group>"; };
+		B088454718FD6532005CE944 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B088454918FD6532005CE944 /* FinancialCalculator4iOS2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FinancialCalculator4iOS2Tests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B088451818FD6532005CE944 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B088452118FD6532005CE944 /* CoreGraphics.framework in Frameworks */,
+				B088452318FD6532005CE944 /* UIKit.framework in Frameworks */,
+				B088451F18FD6532005CE944 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B088453918FD6532005CE944 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B088453E18FD6532005CE944 /* XCTest.framework in Frameworks */,
+				B088454018FD6532005CE944 /* UIKit.framework in Frameworks */,
+				B088453F18FD6532005CE944 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B088451218FD6532005CE944 = {
+			isa = PBXGroup;
+			children = (
+				B088452418FD6532005CE944 /* FinancialCalculator4iOS2 */,
+				B088454318FD6532005CE944 /* FinancialCalculator4iOS2Tests */,
+				B088451D18FD6532005CE944 /* Frameworks */,
+				B088451C18FD6532005CE944 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B088451C18FD6532005CE944 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B088451B18FD6532005CE944 /* FinancialCalculator4iOS2.app */,
+				B088453C18FD6532005CE944 /* FinancialCalculator4iOS2Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B088451D18FD6532005CE944 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B088451E18FD6532005CE944 /* Foundation.framework */,
+				B088452018FD6532005CE944 /* CoreGraphics.framework */,
+				B088452218FD6532005CE944 /* UIKit.framework */,
+				B088453D18FD6532005CE944 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B088452418FD6532005CE944 /* FinancialCalculator4iOS2 */ = {
+			isa = PBXGroup;
+			children = (
+				B088452D18FD6532005CE944 /* FCAppDelegate.h */,
+				B088452E18FD6532005CE944 /* FCAppDelegate.m */,
+				B088453018FD6532005CE944 /* Main.storyboard */,
+				B088453318FD6532005CE944 /* FCViewController.h */,
+				B088453418FD6532005CE944 /* FCViewController.m */,
+				B088453618FD6532005CE944 /* Images.xcassets */,
+				B088452518FD6532005CE944 /* Supporting Files */,
+			);
+			path = FinancialCalculator4iOS2;
+			sourceTree = "<group>";
+		};
+		B088452518FD6532005CE944 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B088452618FD6532005CE944 /* FinancialCalculator4iOS2-Info.plist */,
+				B088452718FD6532005CE944 /* InfoPlist.strings */,
+				B088452A18FD6532005CE944 /* main.m */,
+				B088452C18FD6532005CE944 /* FinancialCalculator4iOS2-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B088454318FD6532005CE944 /* FinancialCalculator4iOS2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B088454918FD6532005CE944 /* FinancialCalculator4iOS2Tests.m */,
+				B088454418FD6532005CE944 /* Supporting Files */,
+			);
+			path = FinancialCalculator4iOS2Tests;
+			sourceTree = "<group>";
+		};
+		B088454418FD6532005CE944 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B088454518FD6532005CE944 /* FinancialCalculator4iOS2Tests-Info.plist */,
+				B088454618FD6532005CE944 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B088451A18FD6532005CE944 /* FinancialCalculator4iOS2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B088454D18FD6532005CE944 /* Build configuration list for PBXNativeTarget "FinancialCalculator4iOS2" */;
+			buildPhases = (
+				B088451718FD6532005CE944 /* Sources */,
+				B088451818FD6532005CE944 /* Frameworks */,
+				B088451918FD6532005CE944 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FinancialCalculator4iOS2;
+			productName = FinancialCalculator4iOS2;
+			productReference = B088451B18FD6532005CE944 /* FinancialCalculator4iOS2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B088453B18FD6532005CE944 /* FinancialCalculator4iOS2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B088455018FD6532005CE944 /* Build configuration list for PBXNativeTarget "FinancialCalculator4iOS2Tests" */;
+			buildPhases = (
+				B088453818FD6532005CE944 /* Sources */,
+				B088453918FD6532005CE944 /* Frameworks */,
+				B088453A18FD6532005CE944 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B088454218FD6532005CE944 /* PBXTargetDependency */,
+			);
+			name = FinancialCalculator4iOS2Tests;
+			productName = FinancialCalculator4iOS2Tests;
+			productReference = B088453C18FD6532005CE944 /* FinancialCalculator4iOS2Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B088451318FD6532005CE944 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = FC;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = letuu.net;
+				TargetAttributes = {
+					B088453B18FD6532005CE944 = {
+						TestTargetID = B088451A18FD6532005CE944;
+					};
+				};
+			};
+			buildConfigurationList = B088451618FD6532005CE944 /* Build configuration list for PBXProject "FinancialCalculator4iOS2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B088451218FD6532005CE944;
+			productRefGroup = B088451C18FD6532005CE944 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B088451A18FD6532005CE944 /* FinancialCalculator4iOS2 */,
+				B088453B18FD6532005CE944 /* FinancialCalculator4iOS2Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B088451918FD6532005CE944 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B088453718FD6532005CE944 /* Images.xcassets in Resources */,
+				B088452918FD6532005CE944 /* InfoPlist.strings in Resources */,
+				B088453218FD6532005CE944 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B088453A18FD6532005CE944 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B088454818FD6532005CE944 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B088451718FD6532005CE944 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B088452B18FD6532005CE944 /* main.m in Sources */,
+				B088452F18FD6532005CE944 /* FCAppDelegate.m in Sources */,
+				B088453518FD6532005CE944 /* FCViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B088453818FD6532005CE944 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B088454A18FD6532005CE944 /* FinancialCalculator4iOS2Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B088454218FD6532005CE944 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B088451A18FD6532005CE944 /* FinancialCalculator4iOS2 */;
+			targetProxy = B088454118FD6532005CE944 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B088452718FD6532005CE944 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B088452818FD6532005CE944 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B088453018FD6532005CE944 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B088453118FD6532005CE944 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B088454618FD6532005CE944 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B088454718FD6532005CE944 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B088454B18FD6532005CE944 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B088454C18FD6532005CE944 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B088454E18FD6532005CE944 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FinancialCalculator4iOS2/FinancialCalculator4iOS2-Prefix.pch";
+				INFOPLIST_FILE = "FinancialCalculator4iOS2/FinancialCalculator4iOS2-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B088454F18FD6532005CE944 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FinancialCalculator4iOS2/FinancialCalculator4iOS2-Prefix.pch";
+				INFOPLIST_FILE = "FinancialCalculator4iOS2/FinancialCalculator4iOS2-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		B088455118FD6532005CE944 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FinancialCalculator4iOS2.app/FinancialCalculator4iOS2";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FinancialCalculator4iOS2/FinancialCalculator4iOS2-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "FinancialCalculator4iOS2Tests/FinancialCalculator4iOS2Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		B088455218FD6532005CE944 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FinancialCalculator4iOS2.app/FinancialCalculator4iOS2";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FinancialCalculator4iOS2/FinancialCalculator4iOS2-Prefix.pch";
+				INFOPLIST_FILE = "FinancialCalculator4iOS2Tests/FinancialCalculator4iOS2Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B088451618FD6532005CE944 /* Build configuration list for PBXProject "FinancialCalculator4iOS2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B088454B18FD6532005CE944 /* Debug */,
+				B088454C18FD6532005CE944 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B088454D18FD6532005CE944 /* Build configuration list for PBXNativeTarget "FinancialCalculator4iOS2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B088454E18FD6532005CE944 /* Debug */,
+				B088454F18FD6532005CE944 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B088455018FD6532005CE944 /* Build configuration list for PBXNativeTarget "FinancialCalculator4iOS2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B088455118FD6532005CE944 /* Debug */,
+				B088455218FD6532005CE944 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B088451318FD6532005CE944 /* Project object */;
+}
