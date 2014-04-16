@@ -1,5 +1,5 @@
 //
-//  FCTableViewController.h
+//  FCLoanPeriodController.h
 //  FinancialCalculator4iOS2
 //
 //  Created by 麦志斌 on 14-4-16.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FCTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
+@interface FCLoanPeriodController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end
