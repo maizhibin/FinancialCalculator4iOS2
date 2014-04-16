@@ -21,6 +21,7 @@
 		B088454818FD6532005CE944 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B088454618FD6532005CE944 /* InfoPlist.strings */; };
 		B088454A18FD6532005CE944 /* FinancialCalculator4iOS2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = B088454918FD6532005CE944 /* FinancialCalculator4iOS2Tests.m */; };
 		B0C7F22318FE578700A31C85 /* FCLoanPeriodController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C7F22218FE578700A31C85 /* FCLoanPeriodController.m */; };
+		B0C7F22818FE698100A31C85 /* FCValueObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C7F22718FE698100A31C85 /* FCValueObject.m */; };
 		B0EABFF318FDF50100B66F1A /* FCTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0EABFF218FDF50100B66F1A /* FCTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,8 @@
 		B088454918FD6532005CE944 /* FinancialCalculator4iOS2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FinancialCalculator4iOS2Tests.m; sourceTree = "<group>"; };
 		B0C7F22118FE578700A31C85 /* FCLoanPeriodController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCLoanPeriodController.h; sourceTree = "<group>"; };
 		B0C7F22218FE578700A31C85 /* FCLoanPeriodController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCLoanPeriodController.m; sourceTree = "<group>"; };
+		B0C7F22618FE698100A31C85 /* FCValueObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCValueObject.h; sourceTree = "<group>"; };
+		B0C7F22718FE698100A31C85 /* FCValueObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCValueObject.m; sourceTree = "<group>"; };
 		B0EABFF118FDF50100B66F1A /* FCTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCTableViewController.h; sourceTree = "<group>"; };
 		B0EABFF218FDF50100B66F1A /* FCTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +88,7 @@
 		B088451218FD6532005CE944 = {
 			isa = PBXGroup;
 			children = (
+				B0C7F22518FE696B00A31C85 /* Model */,
 				B0C7F22418FE578C00A31C85 /* GUI */,
 				B088452418FD6532005CE944 /* FinancialCalculator4iOS2 */,
 				B088454318FD6532005CE944 /* FinancialCalculator4iOS2Tests */,
@@ -163,6 +167,15 @@
 				B0C7F22218FE578700A31C85 /* FCLoanPeriodController.m */,
 			);
 			name = GUI;
+			sourceTree = "<group>";
+		};
+		B0C7F22518FE696B00A31C85 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B0C7F22618FE698100A31C85 /* FCValueObject.h */,
+				B0C7F22718FE698100A31C85 /* FCValueObject.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0C7F22818FE698100A31C85 /* FCValueObject.m in Sources */,
 				B088452B18FD6532005CE944 /* main.m in Sources */,
 				B0C7F22318FE578700A31C85 /* FCLoanPeriodController.m in Sources */,
 				B088452F18FD6532005CE944 /* FCAppDelegate.m in Sources */,

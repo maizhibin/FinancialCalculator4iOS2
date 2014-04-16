@@ -2,11 +2,14 @@
 //  FCLoanPeriodController.m
 //  FinancialCalculator4iOS2
 //
+//  贷款周期TabelView
+//
 //  Created by 麦志斌 on 14-4-16.
 //  Copyright (c) 2014年 letuu.net. All rights reserved.
 //
 
 #import "FCLoanPeriodController.h"
+#import "FCValueObject.h"
 
 @interface FCLoanPeriodController ()
 
@@ -18,6 +21,8 @@
 @property (nonatomic, retain) NSArray * array_4;//商贷利率
 @property (nonatomic, retain) NSArray * array_5;//公积金贷款利率
 @property (nonatomic, retain) NSArray * array_6;//贷款年数
+
+@property (nonatomic, retain) NSString *currentLoanPeriod;
 
 -(void)createDataArray;
 
@@ -83,6 +88,7 @@
     return [self.array_2 count];
 }
 
+// 加载贷款周期数据
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *result = nil;
 //    NSLog(@"执行cellForAtIndexPath");
@@ -95,8 +101,29 @@
     //    result.textLabel.text = [NSString stringWithFormat:@"Section %ld,Cell %ld",(long)indexPath.section,(long)indexPath.row];
     result.textLabel.text = [self.array_2 objectAtIndex:indexPath.row];
     
+    if ([result.textLabel.text isEqualToString:self.currentLoanPeriod]) {
+        result.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        result.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
     return result;
 
+}
+
+
+// tableView单击事件
+// 思路：在UITableViewDelegate的didSelectRowAtIndexPath这个回调方法中先获取这个tableview的所有可见cell，然后遍历一遍将设置每个cell的AccessoryType属性为UITableViewCellAccessoryNone，然后再在你选择的cell上设置AccessoryType属性为UITableViewCellAccessoryCheckmark
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath: indexPath];
+    NSLog(@"您选择的贷款周期是 %@", cell.textLabel.text);
+    self.currentLoanPeriod = cell.textLabel.text;
+
+    NSArray *array = [tableView visibleCells];
+    for (UITableViewCell *cell in array) {
+        [cell setAccessoryType:UITableViewCellAccessoryNone];
+    }
+    [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 /*
