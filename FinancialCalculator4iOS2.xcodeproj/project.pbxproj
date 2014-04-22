@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B010D34518FFC6D400B7C03B /* readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B010D34418FFC6D400B7C03B /* readme.rtf */; };
+		B05D84B119051C3600DDC6DC /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B05D84AF19051C3600DDC6DC /* libMobClickLibrary.a */; };
+		B05D84B319051C6600DDC6DC /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B05D84B219051C6600DDC6DC /* libz.dylib */; };
+		B05D84B419051F3200DDC6DC /* MobClick.h in Sources */ = {isa = PBXBuildFile; fileRef = B05D84B019051C3600DDC6DC /* MobClick.h */; };
 		B088451F18FD6532005CE944 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B088451E18FD6532005CE944 /* Foundation.framework */; };
 		B088452118FD6532005CE944 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B088452018FD6532005CE944 /* CoreGraphics.framework */; };
 		B088452318FD6532005CE944 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B088452218FD6532005CE944 /* UIKit.framework */; };
@@ -36,6 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B010D34418FFC6D400B7C03B /* readme.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = readme.rtf; sourceTree = "<group>"; };
+		B04390A11905EA71003ADA60 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		B05D84AF19051C3600DDC6DC /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		B05D84B019051C3600DDC6DC /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		B05D84B219051C6600DDC6DC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		B088451B18FD6532005CE944 /* FinancialCalculator4iOS2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinancialCalculator4iOS2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B088451E18FD6532005CE944 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B088452018FD6532005CE944 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -67,9 +76,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B05D84B319051C6600DDC6DC /* libz.dylib in Frameworks */,
 				B088452118FD6532005CE944 /* CoreGraphics.framework in Frameworks */,
 				B088452318FD6532005CE944 /* UIKit.framework in Frameworks */,
 				B088451F18FD6532005CE944 /* Foundation.framework in Frameworks */,
+				B05D84B119051C3600DDC6DC /* libMobClickLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +100,7 @@
 		B088451218FD6532005CE944 = {
 			isa = PBXGroup;
 			children = (
+				B010D34418FFC6D400B7C03B /* readme.rtf */,
 				B0C7F22B18FE846400A31C85 /* Delegate */,
 				B0C7F22518FE696B00A31C85 /* Model */,
 				B0C7F22418FE578C00A31C85 /* GUI */,
@@ -111,6 +123,9 @@
 		B088451D18FD6532005CE944 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B05D84B219051C6600DDC6DC /* libz.dylib */,
+				B05D84AF19051C3600DDC6DC /* libMobClickLibrary.a */,
+				B05D84B019051C3600DDC6DC /* MobClick.h */,
 				B088451E18FD6532005CE944 /* Foundation.framework */,
 				B088452018FD6532005CE944 /* CoreGraphics.framework */,
 				B088452218FD6532005CE944 /* UIKit.framework */,
@@ -172,6 +187,7 @@
 		B0C7F22518FE696B00A31C85 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B04390A11905EA71003ADA60 /* Constants.h */,
 				B0C7F22618FE698100A31C85 /* FCValueObject.h */,
 				B0C7F22718FE698100A31C85 /* FCValueObject.m */,
 			);
@@ -270,6 +286,7 @@
 			files = (
 				B088453718FD6532005CE944 /* Images.xcassets in Resources */,
 				B088452918FD6532005CE944 /* InfoPlist.strings in Resources */,
+				B010D34518FFC6D400B7C03B /* readme.rtf in Resources */,
 				B088453218FD6532005CE944 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B05D84B419051F3200DDC6DC /* MobClick.h in Sources */,
 				B0C7F22818FE698100A31C85 /* FCValueObject.m in Sources */,
 				B088452B18FD6532005CE944 /* main.m in Sources */,
 				B0C7F22318FE578700A31C85 /* FCLoanPeriodController.m in Sources */,
@@ -408,6 +426,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -422,8 +441,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FinancialCalculator4iOS2/FinancialCalculator4iOS2-Prefix.pch";
 				INFOPLIST_FILE = "FinancialCalculator4iOS2/FinancialCalculator4iOS2-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -437,8 +461,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FinancialCalculator4iOS2/FinancialCalculator4iOS2-Prefix.pch";
 				INFOPLIST_FILE = "FinancialCalculator4iOS2/FinancialCalculator4iOS2-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

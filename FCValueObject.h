@@ -10,7 +10,7 @@
 
 @interface FCValueObject : NSObject
 
-
+@property (nonatomic, assign) NSString *loanPeriod;
 
 @end
 

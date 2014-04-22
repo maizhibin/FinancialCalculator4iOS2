@@ -10,5 +10,6 @@
 
 @implementation FCValueObject
 
+@synthesize loanPeriod;
 
 @end

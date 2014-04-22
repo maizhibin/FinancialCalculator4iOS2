@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FCPassValueDelegate.h"
 
-@interface FCTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
+@interface FCTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, FCPassValueDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableViewCell *loanPeriodCell;
+@property (weak, nonatomic) IBOutlet UILabel *labelLoanPeriod;
 
 @end

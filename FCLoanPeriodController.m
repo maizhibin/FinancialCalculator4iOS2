@@ -3,13 +3,14 @@
 //  FinancialCalculator4iOS2
 //
 //  贷款周期TabelView
-//
+//  http://justcoding.iteye.com/blog/1476193
 //  Created by 麦志斌 on 14-4-16.
 //  Copyright (c) 2014年 letuu.net. All rights reserved.
 //
 
 #import "FCLoanPeriodController.h"
 #import "FCValueObject.h"
+#import "MobClick.h"
 
 @interface FCLoanPeriodController ()
 
@@ -30,7 +31,7 @@
 
 @implementation FCLoanPeriodController
 
-
+@synthesize delegate;
 
 -(void)createDataArray
 {
@@ -124,7 +125,31 @@
         [cell setAccessoryType:UITableViewCellAccessoryNone];
     }
     [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+    
+    FCValueObject *valueObject = [[FCValueObject alloc] init];
+    valueObject.loanPeriod = cell.textLabel.text;
+    
+    //通过委托协议传值
+    [self.delegate passValue:valueObject];
+    //退回到前一个窗口
+    [self.navigationController popViewControllerAnimated:YES];
+    
+//    [self dismissViewControllerAnimated:YES completion:^{}];
 }
+
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"LoanPeriodView"];
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:@"LoanPeriodView"];
+}
+
 
 /*
 // Override to support conditional editing of the table view.

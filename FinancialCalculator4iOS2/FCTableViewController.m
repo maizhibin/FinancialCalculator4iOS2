@@ -7,12 +7,18 @@
 //
 
 #import "FCTableViewController.h"
+#import "FCLoanPeriodController.h"
+#import "MobClick.h"
 
 @interface FCTableViewController ()
+
 
 @end
 
 @implementation FCTableViewController
+
+@synthesize loanPeriodCell;
+@synthesize labelLoanPeriod;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -40,20 +46,60 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+
+//实现协议，在第一个窗口显示在第二个窗口输入的值，类似Android中的onActivityResult方法
+-(void)passValue:(FCValueObject *)value
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    NSLog(@"回传的贷款周期为 %@", value.loanPeriod);
+    labelLoanPeriod.text = value.loanPeriod;
+    
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+
+//- (void) selectLoanPeriod{
+////    FCLoanPeriodController *secondView = [[FCLoanPeriodController alloc] initWithNibName:@"loanPeriodController" bundle:[NSBundle mainBundle]];
+//    
+////    UIStoryboard *storyboard = self.storyboard;
+////    FCLoanPeriodController *svc = [storyboard
+////                                  instantiateViewControllerWithIdentifier:@"loanPeriodController"];
+//    
+//    FCLoanPeriodController *svc = [segu]
+//    
+//    //设置第二个窗口中的delegate为第一个窗口的self
+//    svc.delegate = self;
+//    
+//    NSLog(@"设置Delegate");
+//}
+
+
+//http://blog.csdn.net/changesquare/article/details/15414773
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if ([[segue identifier] isEqualToString:@"loanPeriodSegue"]) {
+        FCLoanPeriodController *secondViewController = [segue destinationViewController];
+        secondViewController.delegate =self;
+    }
+}
+
+
+#pragma mark - Table view data source
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+//    UITableViewCell *theCellClicked = [self.tableView cellForRowAtIndexPath:indexPath];
+}
+
+- (void)viewWillAppear:(BOOL)animated
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"RootView"];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:@"RootView"];
 }
 
 /*

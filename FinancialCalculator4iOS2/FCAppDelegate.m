@@ -7,12 +7,18 @@
 //
 
 #import "FCAppDelegate.h"
+#import "MobClick.h"
 
 @implementation FCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    [MobClick setLogEnabled:YES];
+    [MobClick setAppVersion:version];
+    [MobClick startWithAppkey:@"5354e50956240bd34802628b" reportPolicy:SEND_ON_EXIT channelId:nil];
+    
     return YES;
 }
 							
