@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kAT-LD-UBF">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" momentary="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kAT-LD-UBF">
                                 <rect key="frame" x="20" y="74" width="280" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
@@ -54,13 +54,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="房贷计算器" id="I4f-X1-aSJ"/>
+                    <navigationItem key="navigationItem" title="房贷计算器" id="I4f-X1-aSJ">
+                        <barButtonItem key="rightBarButtonItem" title="帮助" id="1vt-O2-sdl">
+                            <color key="tintColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="8ee-mY-Evm" kind="push" id="5OS-Hr-m4c"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="474" y="-744"/>
+            <point key="canvasLocation" x="480" y="-768"/>
         </scene>
-        <!--View Controller - 还款方式说明-->
+        <!--View Controller - 帮助-->
         <scene sceneID="T5s-mx-b8u">
             <objects>
                 <viewController id="8ee-mY-Evm" sceneMemberID="viewController">
@@ -76,16 +83,17 @@
                                 <rect key="frame" x="20" y="79" width="280" height="469"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="还款方式说明" id="AZy-H6-QnE"/>
+                    <navigationItem key="navigationItem" title="帮助" id="AZy-H6-QnE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yIn-jr-efV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1387" y="239"/>
+            <point key="canvasLocation" x="1010" y="-1344"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="g8m-SH-zFW">
@@ -100,12 +108,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BwW-Ii-6Te" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="70" y="-744"/>
+            <point key="canvasLocation" x="54" y="-768"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Table View Controller - 贷款选项设置-->
         <scene sceneID="8w8-zv-Byu">
             <objects>
-                <tableViewController id="JpD-oH-2Wb" customClass="FCTableViewController" sceneMemberID="viewController">
+                <tableViewController title="贷款选项设置" id="JpD-oH-2Wb" customClass="FCTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lk4-ay-KAd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="223"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -137,7 +145,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Cw8-9n-aGc" kind="push" id="jLm-m4-fCh"/>
+                                            <segue destination="Cw8-9n-aGc" kind="push" identifier="paymentMethodSegue" id="jLm-m4-fCh"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="70" id="Pke-ZT-94i">
@@ -261,6 +269,8 @@
                     </tableView>
                     <connections>
                         <outlet property="labelLoanPeriod" destination="qHM-nr-mkW" id="nfc-hX-ERE"/>
+                        <outlet property="labelLoanRate" destination="kj4-RJ-bzg" id="m1u-be-BXK"/>
+                        <outlet property="labelPaymentMethod" destination="NG4-Z0-LT1" id="Bmd-5S-iBc"/>
                         <outlet property="loanPeriodCell" destination="4UX-xA-5hl" id="B5S-xu-39Y"/>
                     </connections>
                 </tableViewController>
@@ -268,10 +278,10 @@
             </objects>
             <point key="canvasLocation" x="1010" y="-596"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Table View Controller - 贷款利率-->
         <scene sceneID="nJf-93-DiZ">
             <objects>
-                <tableViewController id="Vf5-lu-ux1" sceneMemberID="viewController">
+                <tableViewController title="贷款利率" id="Vf5-lu-ux1" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qfB-po-gX6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="223"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -289,7 +299,7 @@
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="基准利率" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CJ3-uR-YyA">
                                                     <rect key="frame" x="15" y="0.0" width="266" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -306,7 +316,7 @@
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="上浮10%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ToA-nw-O4z">
                                                     <rect key="frame" x="15" y="0.0" width="290" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -335,10 +345,10 @@
             </objects>
             <point key="canvasLocation" x="1549" y="-596"/>
         </scene>
-        <!--Loan Period Controller-->
+        <!--Loan Period Controller - 贷款期限-->
         <scene sceneID="9Oj-iI-9zI">
             <objects>
-                <tableViewController storyboardIdentifier="loanPeriodController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dqW-Xy-fnB" customClass="FCLoanPeriodController" sceneMemberID="viewController">
+                <tableViewController title="贷款期限" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dqW-Xy-fnB" customClass="FCLoanPeriodController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" restorationIdentifier="loanPeriodController" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="FOZ-83-nLu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="223"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -373,10 +383,10 @@
             </objects>
             <point key="canvasLocation" x="1549" y="-259"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Payment Method Controller - 还款方式-->
         <scene sceneID="zor-tl-7PQ">
             <objects>
-                <tableViewController id="Cw8-9n-aGc" sceneMemberID="viewController">
+                <tableViewController title="还款方式" id="Cw8-9n-aGc" customClass="FCPaymentMethodController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="tul-kp-UgG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="223"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -394,7 +404,7 @@
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="等额本金" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GV6-KG-jXP">
                                                     <rect key="frame" x="15" y="0.0" width="266" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -411,7 +421,7 @@
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="等额本息" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="m6g-hA-tfW">
                                                     <rect key="frame" x="15" y="0.0" width="290" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -427,12 +437,17 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="yVf-YK-GLC"/>
+                    <connections>
+                        <outlet property="tVCellMethod1" destination="qhU-xf-epp" id="wH3-ex-G5K"/>
+                        <outlet property="tVCellMethod2" destination="jZC-uS-ydQ" id="SiW-aT-KY5"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="duV-gB-TLi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1549" y="-943"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

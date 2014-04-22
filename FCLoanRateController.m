@@ -1,28 +1,23 @@
 //
-//  FCTableViewController.m
+//  FCLoanRateController.m
 //  FinancialCalculator4iOS2
 //
-//  Created by 麦志斌 on 14-4-16.
+//  Created by 麦志斌 on 14-4-22.
 //  Copyright (c) 2014年 letuu.net. All rights reserved.
 //
 
-#import "FCTableViewController.h"
-#import "FCLoanPeriodController.h"
-#import "FCPaymentMethodController.h"
-#import "MobClick.h"
+#import "FCLoanRateController.h"
 
-@interface FCTableViewController ()
-
+@interface FCLoanRateController ()
 
 @end
 
-@implementation FCTableViewController
+@implementation FCLoanRateController
 
-@synthesize loanPeriodCell;
-@synthesize labelLoanPeriod;
-@synthesize labelLoanRate;
-@synthesize labelPaymentMethod;
+
+@synthesize delegate;
 @synthesize valueObject;
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -37,11 +32,6 @@
 {
     [super viewDidLoad];
     
-    self.valueObject = [[FCValueObject alloc] init];
-    self.valueObject.loanPeriod = self.labelLoanPeriod.text;
-    self.valueObject.loanRate = self.labelLoanRate.text;
-    self.valueObject.paymentMethod = self.labelPaymentMethod.text;
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -55,70 +45,20 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
-//实现协议，在第一个窗口显示在第二个窗口输入的值，类似Android中的onActivityResult方法
--(void)passValue:(FCValueObject *)value
-{
-    NSLog(@"回传的贷款周期为 %@", value.loanPeriod);
-    labelLoanPeriod.text = value.loanPeriod;
-    labelLoanRate.text = value.loanRate;
-    labelPaymentMethod.text = value.paymentMethod;
-    
-}
-
-
-//- (void) selectLoanPeriod{
-////    FCLoanPeriodController *secondView = [[FCLoanPeriodController alloc] initWithNibName:@"loanPeriodController" bundle:[NSBundle mainBundle]];
-//    
-////    UIStoryboard *storyboard = self.storyboard;
-////    FCLoanPeriodController *svc = [storyboard
-////                                  instantiateViewControllerWithIdentifier:@"loanPeriodController"];
-//    
-//    FCLoanPeriodController *svc = [segu]
-//    
-//    //设置第二个窗口中的delegate为第一个窗口的self
-//    svc.delegate = self;
-//    
-//    NSLog(@"设置Delegate");
-//}
-
-
-// 协议代理Delegate与通知中心NSNotificationCenter实现页面传值
-// http://blog.csdn.net/changesquare/article/details/15414773
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
-    if ([[segue identifier] isEqualToString:@"loanPeriodSegue"]) {
-        FCLoanPeriodController *secondViewController = [segue destinationViewController];
-        secondViewController.delegate = self;
-        secondViewController.valueObject = self.valueObject;
-    }
-    
-    if ([[segue identifier] isEqualToString:@"paymentMethodSegue"]) {
-        FCPaymentMethodController *secondViewController = [segue destinationViewController];
-        secondViewController.delegate = self;
-        secondViewController.valueObject = self.valueObject;
-    }
-}
-
-
 #pragma mark - Table view data source
 
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    UITableViewCell *theCellClicked = [self.tableView cellForRowAtIndexPath:indexPath];
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+#warning Potentially incomplete method implementation.
+    // Return the number of sections.
+    return 0;
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    [super viewWillAppear:animated];
-    [MobClick beginLogPageView:@"RootView"];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    [MobClick endLogPageView:@"RootView"];
+#warning Incomplete method implementation.
+    // Return the number of rows in the section.
+    return 0;
 }
 
 /*

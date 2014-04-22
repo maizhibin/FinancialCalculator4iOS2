@@ -12,6 +12,8 @@
 @interface FCTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, FCPassValueDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableViewCell *loanPeriodCell;
+@property (weak, nonatomic) IBOutlet UILabel *labelLoanRate;
+@property (weak, nonatomic) IBOutlet UILabel *labelPaymentMethod;
 @property (weak, nonatomic) IBOutlet UILabel *labelLoanPeriod;
 @property (nonatomic, strong) FCValueObject *valueObject;
 
