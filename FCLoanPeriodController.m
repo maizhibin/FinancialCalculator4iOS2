@@ -23,7 +23,6 @@
 @property (nonatomic, retain) NSArray * array_5;//公积金贷款利率
 @property (nonatomic, retain) NSArray * array_6;//贷款年数
 
-@property (nonatomic, retain) NSString *currentLoanPeriod;
 
 -(void)createDataArray;
 
@@ -32,6 +31,7 @@
 @implementation FCLoanPeriodController
 
 @synthesize delegate;
+@synthesize valueObject;
 
 -(void)createDataArray
 {
@@ -102,7 +102,7 @@
     //    result.textLabel.text = [NSString stringWithFormat:@"Section %ld,Cell %ld",(long)indexPath.section,(long)indexPath.row];
     result.textLabel.text = [self.array_2 objectAtIndex:indexPath.row];
     
-    if ([result.textLabel.text isEqualToString:self.currentLoanPeriod]) {
+    if ([result.textLabel.text isEqualToString:[valueObject loanPeriod]]) {
         result.accessoryType = UITableViewCellAccessoryCheckmark;
     } else {
         result.accessoryType = UITableViewCellAccessoryNone;
@@ -118,7 +118,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath: indexPath];
     NSLog(@"您选择的贷款周期是 %@", cell.textLabel.text);
-    self.currentLoanPeriod = cell.textLabel.text;
 
     NSArray *array = [tableView visibleCells];
     for (UITableViewCell *cell in array) {
@@ -127,8 +126,8 @@
     [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     
     
-    FCValueObject *valueObject = [[FCValueObject alloc] init];
-    valueObject.loanPeriod = cell.textLabel.text;
+//    FCValueObject *valueObject = [[FCValueObject alloc] init];
+    self.valueObject.loanPeriod = cell.textLabel.text;
     
     //通过委托协议传值
     [self.delegate passValue:valueObject];

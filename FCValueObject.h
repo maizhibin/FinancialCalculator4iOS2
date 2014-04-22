@@ -10,7 +10,17 @@
 
 @interface FCValueObject : NSObject
 
+// 贷款方式
+@property (nonatomic, assign) NSString *loanMethod;
+
+// 贷款期限
 @property (nonatomic, assign) NSString *loanPeriod;
+
+// 利率
+@property (nonatomic, assign) NSString *loanRate;
+
+// 还款方式
+@property (nonatomic, assign) NSString *paymentMethod;
 
 @end
 

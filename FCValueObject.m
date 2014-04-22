@@ -11,5 +11,8 @@
 @implementation FCValueObject
 
 @synthesize loanPeriod;
+@synthesize loanMethod;
+@synthesize paymentMethod;
+@synthesize loanRate;
 
 @end

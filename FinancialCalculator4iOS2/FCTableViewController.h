@@ -13,5 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableViewCell *loanPeriodCell;
 @property (weak, nonatomic) IBOutlet UILabel *labelLoanPeriod;
+@property (nonatomic, strong) FCValueObject *valueObject;
 
 @end

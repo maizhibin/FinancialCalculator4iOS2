@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FCValueObject.h"
 #import "FCPassValueDelegate.h"
 
 @interface FCLoanPeriodController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
@@ -15,6 +16,7 @@
 //这里用assign而不用retain是为了防止引起循环引用。
 //@property(nonatomic,assign) NSObject<FCPassValueDelegate> *delegate;
 
+@property (nonatomic, strong) FCValueObject *valueObject;
 @property (nonatomic, unsafe_unretained) id<FCPassValueDelegate> delegate;
 
 @end

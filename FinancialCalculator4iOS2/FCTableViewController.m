@@ -19,6 +19,7 @@
 
 @synthesize loanPeriodCell;
 @synthesize labelLoanPeriod;
+@synthesize valueObject;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -32,6 +33,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.valueObject = [[FCValueObject alloc] init];
+    self.valueObject.loanPeriod = self.labelLoanPeriod.text;
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -73,12 +77,14 @@
 //}
 
 
-//http://blog.csdn.net/changesquare/article/details/15414773
+// 协议代理Delegate与通知中心NSNotificationCenter实现页面传值
+// http://blog.csdn.net/changesquare/article/details/15414773
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     if ([[segue identifier] isEqualToString:@"loanPeriodSegue"]) {
         FCLoanPeriodController *secondViewController = [segue destinationViewController];
-        secondViewController.delegate =self;
+        secondViewController.delegate = self;
+        secondViewController.valueObject = self.valueObject;
     }
 }
 
