@@ -6,15 +6,16 @@
 //  Copyright (c) 2014年 letuu.net. All rights reserved.
 //
 
-#import "FCPaymentMethodController.h"
+#import "FCRepaymentMethodController.h"
+#import "FCRepaymentDetail.h"
 #import "MobClick.h"
 
-@interface FCPaymentMethodController ()
+@interface FCRepaymentMethodController ()
 
 
 @end
 
-@implementation FCPaymentMethodController
+@implementation FCRepaymentMethodController
 
 
 @synthesize delegate;
@@ -35,7 +36,7 @@
 {
     [super viewDidLoad];
     
-    if ([valueObject.paymentMethod isEqualToString:@"等额本金"]) {
+    if ([valueObject.paymentMethod isEqualToString:@"等额本息"]) {
         tVCellMethod1.accessoryType = UITableViewCellAccessoryCheckmark;
         tVCellMethod2.accessoryType = UITableViewCellAccessoryNone;
     } else {
@@ -55,6 +56,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 #pragma mark - Table view data source
 

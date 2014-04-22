@@ -8,11 +8,14 @@
 
 #import "FCTableViewController.h"
 #import "FCLoanPeriodController.h"
-#import "FCPaymentMethodController.h"
+#import "FCRepaymentMethodController.h"
+#import "FCLoan.h"
+#import "FCRepaymentDetail.h"
 #import "MobClick.h"
 
 @interface FCTableViewController ()
 
+@property(nonatomic, strong) FCLoan *loan;
 
 @end
 
@@ -55,7 +58,61 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (float) getLoanRates: (NSString *)value {
+    return 6.55L;
+}
 
+- (NSInteger) getLoanPeriod: (NSString *)value {
+    return 360;
+}
+
+- (IBAction)calculateRepaymentAmount:(id)sender{
+    // 贷款总月数
+    NSInteger loanPeriodMonths = [self getLoanPeriod:self.labelLoanPeriod.text];
+    // 年利率
+    float loanRates = [self getLoanRates:self.labelLoanRate.text];
+//    float totalLoan = [self.totalLoanField.text floatValue] * 10000;
+    float totalLoan = 550000;
+    
+    NSInteger loanMethod;
+    if ([self.labelPaymentMethod.text isEqualToString:@"等额本息"]) {
+        loanMethod = INTEREST;
+    } else {
+        loanMethod = PRINCIPAL;
+    }
+    
+    self.loan = [FCLoan initLoan:BUSINESS
+                       totalLoan:totalLoan
+                      loanPeriod:loanPeriodMonths
+                       loanRates:loanRates
+                 repaymentMethod:loanMethod];
+    // 开始计算
+    [self.loan calculateRepaymentAmount];
+    // 总还款额
+    NSLog(@"%.0f", self.loan.repaymentAmount);
+//    self.repaymentAmountField.text = [[NSString alloc] initWithFormat:@"%.0f", self.loan.repaymentAmount];
+    
+    // 总利息
+    
+    NSLog(@"%.0f", self.loan.interestAmount);
+//    self.interestAmountField.text = [[NSString alloc] initWithFormat:@"%.0f", self.loan.interestAmount];
+ 
+    
+    NSLog(@"%.0f", self.loan.repaymentAmount);
+//    [self.buttonViewRepaymentDetailList setHidden:false];
+}
+
+
+
+
+// 显示还款明细
+- (IBAction)viewRepaymentDetail:(UIButton *)sender {
+    
+    for (FCRepaymentDetail *repaymentDetail in self.loan.repaymentDetailList) {
+        NSLog(@"%f", repaymentDetail.totalRepayment);
+    }
+    
+}
 
 //实现协议，在第一个窗口显示在第二个窗口输入的值，类似Android中的onActivityResult方法
 -(void)passValue:(FCValueObject *)value
@@ -87,7 +144,7 @@
 // 协议代理Delegate与通知中心NSNotificationCenter实现页面传值
 // http://blog.csdn.net/changesquare/article/details/15414773
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
+    NSLog(@"%@", [segue identifier]);
     if ([[segue identifier] isEqualToString:@"loanPeriodSegue"]) {
         FCLoanPeriodController *secondViewController = [segue destinationViewController];
         secondViewController.delegate = self;
@@ -95,9 +152,13 @@
     }
     
     if ([[segue identifier] isEqualToString:@"paymentMethodSegue"]) {
-        FCPaymentMethodController *secondViewController = [segue destinationViewController];
+        FCRepaymentMethodController *secondViewController = [segue destinationViewController];
         secondViewController.delegate = self;
         secondViewController.valueObject = self.valueObject;
+    }
+    
+    if ([[segue identifier] isEqualToString:@"calculateRepaymentAmountSegue"]) {
+        [self calculateRepaymentAmount:self];
     }
 }
 

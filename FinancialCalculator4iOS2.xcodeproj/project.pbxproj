@@ -8,7 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		B00990DE1906270900F439EE /* FCLoanRateController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00990DD1906270900F439EE /* FCLoanRateController.m */; };
-		B04390A71905F4FF003ADA60 /* FCPaymentMethodController.m in Sources */ = {isa = PBXBuildFile; fileRef = B04390A61905F4FF003ADA60 /* FCPaymentMethodController.m */; };
+		B00991261906382500F439EE /* FCLoan.m in Sources */ = {isa = PBXBuildFile; fileRef = B00991211906382500F439EE /* FCLoan.m */; };
+		B00991271906382500F439EE /* FCRates.m in Sources */ = {isa = PBXBuildFile; fileRef = B00991231906382500F439EE /* FCRates.m */; };
+		B00991281906382500F439EE /* FCRepaymentDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = B00991251906382500F439EE /* FCRepaymentDetail.m */; };
+		B009912B1906387A00F439EE /* FCPaymentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B009912A1906387A00F439EE /* FCPaymentDetailViewController.m */; };
+		B009912E19067E4B00F439EE /* FCRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B009912D19067E4B00F439EE /* FCRootViewController.m */; };
+		B04390A71905F4FF003ADA60 /* FCRepaymentMethodController.m in Sources */ = {isa = PBXBuildFile; fileRef = B04390A61905F4FF003ADA60 /* FCRepaymentMethodController.m */; };
 		B04390A919061B59003ADA60 /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = B04390A819061B59003ADA60 /* readme.md */; };
 		B05D84B119051C3600DDC6DC /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B05D84AF19051C3600DDC6DC /* libMobClickLibrary.a */; };
 		B05D84B319051C6600DDC6DC /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B05D84B219051C6600DDC6DC /* libz.dylib */; };
@@ -44,9 +49,19 @@
 /* Begin PBXFileReference section */
 		B00990DC1906270900F439EE /* FCLoanRateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCLoanRateController.h; sourceTree = "<group>"; };
 		B00990DD1906270900F439EE /* FCLoanRateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCLoanRateController.m; sourceTree = "<group>"; };
+		B00991201906382500F439EE /* FCLoan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FCLoan.h; path = ../FinancialCalculator4iOS/FinancialCalculator4iOS/FCLoan.h; sourceTree = "<group>"; };
+		B00991211906382500F439EE /* FCLoan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FCLoan.m; path = ../FinancialCalculator4iOS/FinancialCalculator4iOS/FCLoan.m; sourceTree = "<group>"; };
+		B00991221906382500F439EE /* FCRates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FCRates.h; path = ../FinancialCalculator4iOS/FinancialCalculator4iOS/FCRates.h; sourceTree = "<group>"; };
+		B00991231906382500F439EE /* FCRates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FCRates.m; path = ../FinancialCalculator4iOS/FinancialCalculator4iOS/FCRates.m; sourceTree = "<group>"; };
+		B00991241906382500F439EE /* FCRepaymentDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FCRepaymentDetail.h; path = ../FinancialCalculator4iOS/FinancialCalculator4iOS/FCRepaymentDetail.h; sourceTree = "<group>"; };
+		B00991251906382500F439EE /* FCRepaymentDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FCRepaymentDetail.m; path = ../FinancialCalculator4iOS/FinancialCalculator4iOS/FCRepaymentDetail.m; sourceTree = "<group>"; };
+		B00991291906387A00F439EE /* FCPaymentDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCPaymentDetailViewController.h; sourceTree = "<group>"; };
+		B009912A1906387A00F439EE /* FCPaymentDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCPaymentDetailViewController.m; sourceTree = "<group>"; };
+		B009912C19067E4B00F439EE /* FCRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCRootViewController.h; sourceTree = "<group>"; };
+		B009912D19067E4B00F439EE /* FCRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCRootViewController.m; sourceTree = "<group>"; };
 		B04390A11905EA71003ADA60 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		B04390A51905F4FF003ADA60 /* FCPaymentMethodController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCPaymentMethodController.h; sourceTree = "<group>"; };
-		B04390A61905F4FF003ADA60 /* FCPaymentMethodController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCPaymentMethodController.m; sourceTree = "<group>"; };
+		B04390A51905F4FF003ADA60 /* FCRepaymentMethodController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCRepaymentMethodController.h; sourceTree = "<group>"; };
+		B04390A61905F4FF003ADA60 /* FCRepaymentMethodController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCRepaymentMethodController.m; sourceTree = "<group>"; };
 		B04390A819061B59003ADA60 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.md; sourceTree = "<group>"; };
 		B05D84AF19051C3600DDC6DC /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		B05D84B019051C3600DDC6DC /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
@@ -186,10 +201,14 @@
 				B0EABFF218FDF50100B66F1A /* FCTableViewController.m */,
 				B0C7F22118FE578700A31C85 /* FCLoanPeriodController.h */,
 				B0C7F22218FE578700A31C85 /* FCLoanPeriodController.m */,
-				B04390A51905F4FF003ADA60 /* FCPaymentMethodController.h */,
-				B04390A61905F4FF003ADA60 /* FCPaymentMethodController.m */,
+				B04390A51905F4FF003ADA60 /* FCRepaymentMethodController.h */,
+				B04390A61905F4FF003ADA60 /* FCRepaymentMethodController.m */,
 				B00990DC1906270900F439EE /* FCLoanRateController.h */,
 				B00990DD1906270900F439EE /* FCLoanRateController.m */,
+				B00991291906387A00F439EE /* FCPaymentDetailViewController.h */,
+				B009912A1906387A00F439EE /* FCPaymentDetailViewController.m */,
+				B009912C19067E4B00F439EE /* FCRootViewController.h */,
+				B009912D19067E4B00F439EE /* FCRootViewController.m */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -197,6 +216,12 @@
 		B0C7F22518FE696B00A31C85 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B00991201906382500F439EE /* FCLoan.h */,
+				B00991211906382500F439EE /* FCLoan.m */,
+				B00991221906382500F439EE /* FCRates.h */,
+				B00991231906382500F439EE /* FCRates.m */,
+				B00991241906382500F439EE /* FCRepaymentDetail.h */,
+				B00991251906382500F439EE /* FCRepaymentDetail.m */,
 				B04390A11905EA71003ADA60 /* Constants.h */,
 				B0C7F22618FE698100A31C85 /* FCValueObject.h */,
 				B0C7F22718FE698100A31C85 /* FCValueObject.m */,
@@ -318,12 +343,17 @@
 			files = (
 				B05D84B419051F3200DDC6DC /* MobClick.h in Sources */,
 				B0C7F22818FE698100A31C85 /* FCValueObject.m in Sources */,
-				B04390A71905F4FF003ADA60 /* FCPaymentMethodController.m in Sources */,
+				B00991271906382500F439EE /* FCRates.m in Sources */,
+				B04390A71905F4FF003ADA60 /* FCRepaymentMethodController.m in Sources */,
 				B088452B18FD6532005CE944 /* main.m in Sources */,
+				B00991261906382500F439EE /* FCLoan.m in Sources */,
+				B009912E19067E4B00F439EE /* FCRootViewController.m in Sources */,
 				B00990DE1906270900F439EE /* FCLoanRateController.m in Sources */,
 				B0C7F22318FE578700A31C85 /* FCLoanPeriodController.m in Sources */,
 				B088452F18FD6532005CE944 /* FCAppDelegate.m in Sources */,
+				B00991281906382500F439EE /* FCRepaymentDetail.m in Sources */,
 				B0EABFF318FDF50100B66F1A /* FCTableViewController.m in Sources */,
+				B009912B1906387A00F439EE /* FCPaymentDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

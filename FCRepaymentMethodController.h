@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FCPassValueDelegate.h"
 
-@interface FCPaymentMethodController : UITableViewController
+@interface FCRepaymentMethodController : UITableViewController
 
 @property (nonatomic, strong) FCValueObject *valueObject;
 @property (nonatomic, unsafe_unretained) id<FCPassValueDelegate> delegate;
