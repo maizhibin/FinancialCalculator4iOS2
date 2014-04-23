@@ -12,7 +12,7 @@
 
 @synthesize loanPeriod;
 @synthesize loanMethod;
-@synthesize paymentMethod;
+@synthesize repaymentMethod;
 @synthesize loanRate;
 
 @end

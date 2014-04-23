@@ -59,7 +59,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="JpD-oH-2Wb" kind="embed" id="iXe-Q0-JVV"/>
+                                    <segue destination="JpD-oH-2Wb" kind="embed" identifier="loanSettingSegue" id="iXe-Q0-JVV"/>
                                 </connections>
                             </containerView>
                         </subviews>

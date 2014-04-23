@@ -27,6 +27,8 @@
 @synthesize labelPaymentMethod;
 @synthesize valueObject;
 
+@synthesize delegate;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -43,8 +45,11 @@
     self.valueObject = [[FCValueObject alloc] init];
     self.valueObject.loanPeriod = self.labelLoanPeriod.text;
     self.valueObject.loanRate = self.labelLoanRate.text;
-    self.valueObject.paymentMethod = self.labelPaymentMethod.text;
-    
+    self.valueObject.repaymentMethod = self.labelPaymentMethod.text;
+
+    //通过委托协议传值
+    [self.delegate passValue:valueObject];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -57,52 +62,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-- (float) getLoanRates: (NSString *)value {
-    return 6.55L;
-}
-
-- (NSInteger) getLoanPeriod: (NSString *)value {
-    return 360;
-}
-
-- (IBAction)calculateRepaymentAmount:(id)sender{
-    // 贷款总月数
-    NSInteger loanPeriodMonths = [self getLoanPeriod:self.labelLoanPeriod.text];
-    // 年利率
-    float loanRates = [self getLoanRates:self.labelLoanRate.text];
-//    float totalLoan = [self.totalLoanField.text floatValue] * 10000;
-    float totalLoan = 550000;
-    
-    NSInteger loanMethod;
-    if ([self.labelPaymentMethod.text isEqualToString:@"等额本息"]) {
-        loanMethod = INTEREST;
-    } else {
-        loanMethod = PRINCIPAL;
-    }
-    
-    self.loan = [FCLoan initLoan:BUSINESS
-                       totalLoan:totalLoan
-                      loanPeriod:loanPeriodMonths
-                       loanRates:loanRates
-                 repaymentMethod:loanMethod];
-    // 开始计算
-    [self.loan calculateRepaymentAmount];
-    // 总还款额
-    NSLog(@"%.0f", self.loan.repaymentAmount);
-//    self.repaymentAmountField.text = [[NSString alloc] initWithFormat:@"%.0f", self.loan.repaymentAmount];
-    
-    // 总利息
-    
-    NSLog(@"%.0f", self.loan.interestAmount);
-//    self.interestAmountField.text = [[NSString alloc] initWithFormat:@"%.0f", self.loan.interestAmount];
- 
-    
-    NSLog(@"%.0f", self.loan.repaymentAmount);
-//    [self.buttonViewRepaymentDetailList setHidden:false];
-}
-
-
 
 
 // 显示还款明细
@@ -120,7 +79,10 @@
     NSLog(@"回传的贷款周期为 %@", value.loanPeriod);
     labelLoanPeriod.text = value.loanPeriod;
     labelLoanRate.text = value.loanRate;
-    labelPaymentMethod.text = value.paymentMethod;
+    labelPaymentMethod.text = value.repaymentMethod;
+
+    //通过委托协议传值
+    [self.delegate passValue:valueObject];
     
 }
 

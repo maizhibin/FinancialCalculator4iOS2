@@ -36,7 +36,7 @@
 {
     [super viewDidLoad];
     
-    if ([valueObject.paymentMethod isEqualToString:@"等额本息"]) {
+    if ([valueObject.repaymentMethod isEqualToString:@"等额本息"]) {
         tVCellMethod1.accessoryType = UITableViewCellAccessoryCheckmark;
         tVCellMethod2.accessoryType = UITableViewCellAccessoryNone;
     } else {
@@ -100,7 +100,7 @@
     
     
     //    FCValueObject *valueObject = [[FCValueObject alloc] init];
-    self.valueObject.paymentMethod = cell.textLabel.text;
+    self.valueObject.repaymentMethod = cell.textLabel.text;
     
     //通过委托协议传值
     [self.delegate passValue:valueObject];

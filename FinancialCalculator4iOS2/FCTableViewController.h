@@ -23,4 +23,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelLoanPeriod;
 @property (nonatomic, strong) FCValueObject *valueObject;
 
+@property (nonatomic, unsafe_unretained) id<FCPassValueDelegate> delegate;
+
 @end

@@ -20,7 +20,7 @@
 @property (nonatomic, strong) NSString *loanRate;
 
 // 还款方式
-@property (nonatomic, strong) NSString *paymentMethod;
+@property (nonatomic, strong) NSString *repaymentMethod;
 
 @end
 
