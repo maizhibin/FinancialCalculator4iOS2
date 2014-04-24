@@ -9,6 +9,7 @@
 #import "FCRootViewController.h"
 #import "FCLoan.h"
 #import "FCTableViewController.h"
+#import "FCRepaymentDetailViewController.h"
 
 @interface FCRootViewController ()
 
@@ -18,6 +19,7 @@
 
 
 @synthesize valueObject;
+@synthesize loan;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -55,6 +57,14 @@
         NSLog(@"%@", secondViewController.valueObject.loanPeriod);
         NSLog(@"%@", secondViewController.valueObject.loanRate);
         NSLog(@"%@", secondViewController.valueObject.repaymentMethod);
+    }
+
+    if ([[segue identifier] isEqualToString:@"loanSettingSegue"]) {
+
+    }
+    if ([[segue identifier] isEqualToString:@"calculateRepaymentAmountSegue"]) {
+        FCRepaymentDetailViewController *secondViewController = [segue destinationViewController];
+        secondViewController.loan = self.loan;
     }
 }
 
@@ -103,26 +113,20 @@
     }
 
 
-//
-//    self.loan = [FCLoan initLoan:BUSINESS
-//                       totalLoan:totalLoan
-//                      loanPeriod:loanPeriodMonths
-//                       loanRates:loanRates
-//                 repaymentMethod:loanMethod];
-//    // 开始计算
-//    [self.loan calculateRepaymentAmount];
-//    // 总还款额
-//    NSLog(@"%.0f", self.loan.repaymentAmount);
-//    //    self.repaymentAmountField.text = [[NSString alloc] initWithFormat:@"%.0f", self.loan.repaymentAmount];
-//    
-//    // 总利息
-//    
-//    NSLog(@"%.0f", self.loan.interestAmount);
-//    //    self.interestAmountField.text = [[NSString alloc] initWithFormat:@"%.0f", self.loan.interestAmount];
-//    
-//    
-//    NSLog(@"%.0f", self.loan.repaymentAmount);
-//    //    [self.buttonViewRepaymentDetailList setHidden:false];
+
+    self.loan = [FCLoan initLoan:BUSINESS
+                       totalLoan:totalLoan
+                      loanPeriod:loanPeriodMonths
+                       loanRates:loanRates
+                 repaymentMethod:loanMethod];
+    // 开始计算
+    [self.loan calculateRepaymentAmount];
+    // 总还款额
+    //    self.repaymentAmountField.text = [[NSString alloc] initWithFormat:@"%.0f", self.loan.repaymentAmount];
+    // 总利息
+    //    self.interestAmountField.text = [[NSString alloc] initWithFormat:@"%.0f", self.loan.interestAmount];
+
+    //    [self.buttonViewRepaymentDetailList setHidden:false];
 }
 
 

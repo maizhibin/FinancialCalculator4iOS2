@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "FCPassValueDelegate.h"
 
+@class FCLoan;
+
 @interface FCRootViewController : UIViewController<FCPassValueDelegate>
 
 - (IBAction)calculateRepaymentAmount:(id)sender;
@@ -16,5 +18,6 @@
 //- (float) getLoanRates:(NSString *)value;
 
 @property (nonatomic, strong) FCValueObject *valueObject;
+@property (nonatomic, strong) FCLoan *loan;
 
 @end
