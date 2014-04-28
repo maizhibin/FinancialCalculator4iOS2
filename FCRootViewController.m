@@ -13,10 +13,16 @@
 
 @interface FCRootViewController ()
 
+
 @end
 
 @implementation FCRootViewController
 
+#define MY_BANNER_UNIT_ID @"a1535e1d6e4e8dc"
+
+
+// 将其中一个声明为实例变量
+GADBannerView *bannerView_;
 
 @synthesize valueObject;
 @synthesize loan;
@@ -33,10 +39,34 @@
 - (void)viewDidLoad
 {
 
-    NSLog(@"viewDidLoad");
 
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    NSLog(@"viewDidLoad");
+
+    // 在屏幕顶部创建标准尺寸的视图。
+    // 在GADAdSize.h中对可用的AdSize常量进行说明。
+    bannerView_ = [[GADBannerView alloc] initWithAdSize:kGADAdSizeFullBanner];
+
+    // 指定广告单元ID。
+    bannerView_.adUnitID = MY_BANNER_UNIT_ID;
+
+    // 告知运行时文件，在将用户转至广告的展示位置之后恢复哪个UIViewController
+    // 并将其添加至视图层级结构。
+    bannerView_.rootViewController = self;
+    [self.view addSubview:bannerView_];
+
+    GADRequest *request = [GADRequest request];
+
+// Make the request for a test ad. Put in an identifier for
+// the simulator as well as any devices you want to receive test ads.
+    request.testing = true;
+    request.testDevices = [NSArray arrayWithObjects:GAD_SIMULATOR_ID, nil];
+
+    // 启动一般性请求并在其中加载广告。
+    [bannerView_ loadRequest:request];
+
+
 }
 
 - (void)didReceiveMemoryWarning

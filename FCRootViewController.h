@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "FCPassValueDelegate.h"
+#import "GADBannerView.h"
 
 @class FCLoan;
 
 @interface FCRootViewController : UIViewController<FCPassValueDelegate>
+
 
 - (IBAction)calculateRepaymentAmount:(id)sender;
 //- (NSInteger) getLoanPeriod:(NSString *)value;
