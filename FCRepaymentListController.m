@@ -1,27 +1,22 @@
 //
-//  FCRepaymentDetailViewController.m
+//  FCRepaymentListController.m
 //  FinancialCalculator4iOS2
 //
-//  Created by 麦志斌 on 14-4-22.
+//  Created by 麦志斌 on 14-4-25.
 //  Copyright (c) 2014年 letuu.net. All rights reserved.
 //
 
-#import "FCRepaymentDetailViewController.h"
+#import "FCRepaymentListController.h"    "
+#import "FCRepaymentDetail.h"
 #import "FCLoan.h"
-#import "FCRepaymentListController.h"
 
-@interface FCRepaymentDetailViewController ()
+@interface FCRepaymentListController ()
 
 @end
 
-@implementation FCRepaymentDetailViewController
+@implementation FCRepaymentListController
 
 @synthesize loan;
-@synthesize labelInterestAmount;
-@synthesize labelRepaymentAmount;
-@synthesize labelRepaymentMonthly;
-@synthesize labelTotalLoan;
-@synthesize labelLoanPeriod;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -34,15 +29,8 @@
 
 - (void)viewDidLoad
 {
-
     [super viewDidLoad];
-
-    self.labelTotalLoan.text = [NSString stringWithFormat:@"%0.2f (万元)", loan.totalLoan/10000];
-    self.labelInterestAmount.text = [NSString stringWithFormat:@"%0.2f (万元)", loan.interestAmount/10000];
-    self.labelRepaymentAmount.text = [NSString stringWithFormat:@"%0.2f (万元)", loan.repaymentAmount/10000];
-    self.labelRepaymentMonthly.text = [NSString stringWithFormat:@"%@", [loan.repaymentDetailList objectAtIndex:1]];
-    self.labelLoanPeriod.text = [NSString stringWithFormat:@"%lu", [loan.repaymentDetailList count]];
-
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -56,42 +44,68 @@
     // Dispose of any resources that can be recreated.
 }
 
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    NSLog(@"%@", [segue identifier]);
-
-    if ([[segue identifier] isEqualToString:@"repaymentListSegue"]) {
-        FCRepaymentListController *secondViewController = [segue destinationViewController];
-        secondViewController.loan = self.loan;
-    }
-}
-
 #pragma mark - Table view data source
 
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-//{
-//#warning Potentially incomplete method implementation.
-//    // Return the number of sections.
-//    return 0;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-//{
-//#warning Incomplete method implementation.
-//    // Return the number of rows in the section.
-//    return 0;
-//}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return [loan.repaymentDetailList count];
+}
 
-/*
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
+    return 3;
+}
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
+    NSUInteger section = [indexPath section];
+    NSUInteger row = [indexPath row];
+
+//    static NSString *CellIdentifier = @"cell";
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+
     // Configure the cell...
-    
+    static NSString *GroupedTableIdentifier = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:GroupedTableIdentifier forIndexPath:indexPath];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]
+                initWithStyle:UITableViewCellStyleValue1
+              reuseIdentifier:GroupedTableIdentifier];
+    }
+
+    FCRepaymentDetail *detail = [loan.repaymentDetailList objectAtIndex:section];
+    if (row == 0) {
+        cell.textLabel.text = @"还款金额";
+//        cell.textLabel.font=[UIFont boldSystemFontOfSize:12];
+        cell.textLabel.numberOfLines=0;
+        cell.detailTextLabel.text = [[NSString alloc] initWithFormat:@"%#.2f 元", detail.totalRepayment];
+    } else if (row == 1) {
+        cell.textLabel.text = @"本金";
+//        cell.textLabel.font=[UIFont boldSystemFontOfSize:12];
+        cell.textLabel.numberOfLines=0;
+        cell.detailTextLabel.text = [[NSString alloc] initWithFormat:@"%#.2f 元", detail.principal];
+    } else if (row == 2) {
+        cell.textLabel.text = @"利息";
+//        cell.textLabel.font=[UIFont boldSystemFontOfSize:12];
+        cell.textLabel.numberOfLines=0;
+        cell.detailTextLabel.text = [[NSString alloc] initWithFormat:@"%#.2f 元", detail.interest];
+    }
+
     return cell;
 }
-*/
+
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+//    NSString *periodNumber = [[self.repaymentDetailList objectAtIndex:section].periodNumber];
+//    return periodNumber;
+    NSString *str = [[NSString alloc] initWithFormat:@"第%ld期", section+1];
+
+    return str;
+}
 
 /*
 // Override to support conditional editing of the table view.

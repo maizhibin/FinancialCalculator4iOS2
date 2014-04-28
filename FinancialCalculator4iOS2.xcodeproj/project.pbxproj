@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00427B5BC617412A8A806A04 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 654AB51C15D04405A520307D /* libPods.a */; };
 		B00990DE1906270900F439EE /* FCLoanRateController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00990DD1906270900F439EE /* FCLoanRateController.m */; };
 		B00991261906382500F439EE /* FCLoan.m in Sources */ = {isa = PBXBuildFile; fileRef = B00991211906382500F439EE /* FCLoan.m */; };
 		B00991271906382500F439EE /* FCRates.m in Sources */ = {isa = PBXBuildFile; fileRef = B00991231906382500F439EE /* FCRates.m */; };
 		B00991281906382500F439EE /* FCRepaymentDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = B00991251906382500F439EE /* FCRepaymentDetail.m */; };
 		B009912B1906387A00F439EE /* FCRepaymentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B009912A1906387A00F439EE /* FCRepaymentDetailViewController.m */; };
 		B009912E19067E4B00F439EE /* FCRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B009912D19067E4B00F439EE /* FCRootViewController.m */; };
+		B033268D1909EC8200DEC86A /* FCRepaymentListController.m in Sources */ = {isa = PBXBuildFile; fileRef = B033268C1909EC8200DEC86A /* FCRepaymentListController.m */; };
 		B04390A71905F4FF003ADA60 /* FCRepaymentMethodController.m in Sources */ = {isa = PBXBuildFile; fileRef = B04390A61905F4FF003ADA60 /* FCRepaymentMethodController.m */; };
 		B04390A919061B59003ADA60 /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = B04390A819061B59003ADA60 /* readme.md */; };
 		B05D84B119051C3600DDC6DC /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B05D84AF19051C3600DDC6DC /* libMobClickLibrary.a */; };
@@ -47,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D3843C019D145A0BF91229A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		654AB51C15D04405A520307D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B00990DC1906270900F439EE /* FCLoanRateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCLoanRateController.h; sourceTree = "<group>"; };
 		B00990DD1906270900F439EE /* FCLoanRateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCLoanRateController.m; sourceTree = "<group>"; };
 		B00991201906382500F439EE /* FCLoan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FCLoan.h; path = ../FinancialCalculator4iOS/FinancialCalculator4iOS/FCLoan.h; sourceTree = "<group>"; };
@@ -59,6 +63,8 @@
 		B009912A1906387A00F439EE /* FCRepaymentDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCRepaymentDetailViewController.m; sourceTree = "<group>"; };
 		B009912C19067E4B00F439EE /* FCRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCRootViewController.h; sourceTree = "<group>"; };
 		B009912D19067E4B00F439EE /* FCRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCRootViewController.m; sourceTree = "<group>"; };
+		B033268B1909EC8200DEC86A /* FCRepaymentListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCRepaymentListController.h; sourceTree = "<group>"; };
+		B033268C1909EC8200DEC86A /* FCRepaymentListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCRepaymentListController.m; sourceTree = "<group>"; };
 		B04390A11905EA71003ADA60 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		B04390A51905F4FF003ADA60 /* FCRepaymentMethodController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCRepaymentMethodController.h; sourceTree = "<group>"; };
 		B04390A61905F4FF003ADA60 /* FCRepaymentMethodController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCRepaymentMethodController.m; sourceTree = "<group>"; };
@@ -102,6 +108,7 @@
 				B088452318FD6532005CE944 /* UIKit.framework in Frameworks */,
 				B088451F18FD6532005CE944 /* Foundation.framework in Frameworks */,
 				B05D84B119051C3600DDC6DC /* libMobClickLibrary.a in Frameworks */,
+				00427B5BC617412A8A806A04 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +136,7 @@
 				B088454318FD6532005CE944 /* FinancialCalculator4iOS2Tests */,
 				B088451D18FD6532005CE944 /* Frameworks */,
 				B088451C18FD6532005CE944 /* Products */,
+				0D3843C019D145A0BF91229A /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,6 +159,7 @@
 				B088452018FD6532005CE944 /* CoreGraphics.framework */,
 				B088452218FD6532005CE944 /* UIKit.framework */,
 				B088453D18FD6532005CE944 /* XCTest.framework */,
+				654AB51C15D04405A520307D /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -209,6 +218,8 @@
 				B009912A1906387A00F439EE /* FCRepaymentDetailViewController.m */,
 				B009912C19067E4B00F439EE /* FCRootViewController.h */,
 				B009912D19067E4B00F439EE /* FCRootViewController.m */,
+				B033268B1909EC8200DEC86A /* FCRepaymentListController.h */,
+				B033268C1909EC8200DEC86A /* FCRepaymentListController.m */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -246,9 +257,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B088454D18FD6532005CE944 /* Build configuration list for PBXNativeTarget "FinancialCalculator4iOS2" */;
 			buildPhases = (
+				DD5DCE159FA24393B4B989E3 /* Check Pods Manifest.lock */,
 				B088451718FD6532005CE944 /* Sources */,
 				B088451818FD6532005CE944 /* Frameworks */,
 				B088451918FD6532005CE944 /* Resources */,
+				9EAD5938D6234E43BBB9D8D9 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -306,6 +319,8 @@
 			mainGroup = B088451218FD6532005CE944;
 			productRefGroup = B088451C18FD6532005CE944 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+			);
 			projectRoot = "";
 			targets = (
 				B088451A18FD6532005CE944 /* FinancialCalculator4iOS2 */,
@@ -336,6 +351,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9EAD5938D6234E43BBB9D8D9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD5DCE159FA24393B4B989E3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B088451718FD6532005CE944 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -347,6 +395,7 @@
 				B04390A71905F4FF003ADA60 /* FCRepaymentMethodController.m in Sources */,
 				B088452B18FD6532005CE944 /* main.m in Sources */,
 				B00991261906382500F439EE /* FCLoan.m in Sources */,
+				B033268D1909EC8200DEC86A /* FCRepaymentListController.m in Sources */,
 				B009912E19067E4B00F439EE /* FCRootViewController.m in Sources */,
 				B00990DE1906270900F439EE /* FCLoanRateController.m in Sources */,
 				B0C7F22318FE578700A31C85 /* FCLoanPeriodController.m in Sources */,
@@ -476,6 +525,7 @@
 		};
 		B088454E18FD6532005CE944 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D3843C019D145A0BF91229A /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -496,6 +546,7 @@
 		};
 		B088454F18FD6532005CE944 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D3843C019D145A0BF91229A /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
