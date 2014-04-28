@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelLoanPeriod;
 @property (weak, nonatomic) IBOutlet UILabel *labelInterestAmount;
 @property (weak, nonatomic) IBOutlet UILabel *labelRepaymentMonthly;
+@property (weak, nonatomic) IBOutlet UILabel *labelFirstRepayment;
+@property (weak, nonatomic) IBOutlet UILabel *labelLastRepayment;
 
 @property (nonatomic, strong) FCLoan *loan;
 @property (nonatomic, strong) NSMutableArray *repaymentDetailList;

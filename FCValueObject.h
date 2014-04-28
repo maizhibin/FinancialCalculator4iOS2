@@ -22,5 +22,9 @@
 // 还款方式
 @property (nonatomic, strong) NSString *repaymentMethod;
 
+// 商业贷款金额
+@property (nonatomic, strong) NSString *loanAmountBusiness;
+
+
 @end
 

@@ -14,5 +14,6 @@
 @synthesize loanMethod;
 @synthesize repaymentMethod;
 @synthesize loanRate;
+@synthesize loanAmountBusiness;
 
 @end

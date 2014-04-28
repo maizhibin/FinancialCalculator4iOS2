@@ -25,6 +25,8 @@
 @synthesize labelLoanPeriod;
 @synthesize labelLoanRate;
 @synthesize labelPaymentMethod;
+@synthesize textLoanBusiness;
+@synthesize textLoanPortfolio;
 @synthesize valueObject;
 
 @synthesize delegate;
@@ -46,6 +48,7 @@
     self.valueObject.loanPeriod = self.labelLoanPeriod.text;
     self.valueObject.loanRate = self.labelLoanRate.text;
     self.valueObject.repaymentMethod = self.labelPaymentMethod.text;
+    self.valueObject.loanAmountBusiness = self.textLoanBusiness.text;
 
     //通过委托协议传值
     [self.delegate passValue:valueObject];
@@ -80,10 +83,19 @@
     labelLoanPeriod.text = value.loanPeriod;
     labelLoanRate.text = value.loanRate;
     labelPaymentMethod.text = value.repaymentMethod;
+    textLoanBusiness.text = value.loanAmountBusiness;
+
 
     //通过委托协议传值
     [self.delegate passValue:valueObject];
     
+}
+
+
+- (IBAction)backgroundTap:(id)sender
+{
+    [self.textLoanBusiness resignFirstResponder];
+    [self.textLoanPortfolio resignFirstResponder];
 }
 
 

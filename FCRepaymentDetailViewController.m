@@ -9,6 +9,7 @@
 #import "FCRepaymentDetailViewController.h"
 #import "FCLoan.h"
 #import "FCRepaymentListController.h"
+#import "FCRepaymentDetail.h"
 
 @interface FCRepaymentDetailViewController ()
 
@@ -37,11 +38,18 @@
 
     [super viewDidLoad];
 
-    self.labelTotalLoan.text = [NSString stringWithFormat:@"%0.2f (万元)", loan.totalLoan/10000];
-    self.labelInterestAmount.text = [NSString stringWithFormat:@"%0.2f (万元)", loan.interestAmount/10000];
-    self.labelRepaymentAmount.text = [NSString stringWithFormat:@"%0.2f (万元)", loan.repaymentAmount/10000];
+
+    FCRepaymentDetail *firstDetail = [loan.repaymentDetailList objectAtIndex:0];
+    FCRepaymentDetail *lastDetail = [loan.repaymentDetailList objectAtIndex:[loan.repaymentDetailList count]-1];
+    
+
+    self.labelTotalLoan.text = [NSString stringWithFormat:@"%.2f 万元", loan.totalLoan/10000];
+    self.labelInterestAmount.text = [NSString stringWithFormat:@"%.2f 万元", loan.interestAmount/10000];
+    self.labelRepaymentAmount.text = [NSString stringWithFormat:@"%.2f 万元", loan.repaymentAmount/10000];
     self.labelRepaymentMonthly.text = [NSString stringWithFormat:@"%@", [loan.repaymentDetailList objectAtIndex:1]];
-    self.labelLoanPeriod.text = [NSString stringWithFormat:@"%lu", [loan.repaymentDetailList count]];
+    self.labelLoanPeriod.text = [NSString stringWithFormat:@"%d", [loan.repaymentDetailList count]];
+    self.labelFirstRepayment.text = [NSString stringWithFormat:@"%.2f 元", firstDetail.totalRepayment];
+    self.labelLastRepayment.text = [NSString stringWithFormat:@"%.2f 元", lastDetail.totalRepayment];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

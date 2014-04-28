@@ -120,6 +120,7 @@ GADBannerView *bannerView_;
     self.valueObject.loanPeriod = value.loanPeriod;
     self.valueObject.loanRate = value.loanRate;
     self.valueObject.repaymentMethod = value.repaymentMethod;
+    self.valueObject.loanAmountBusiness = value.loanAmountBusiness;
 }
 
 - (float) getLoanRates: (NSString *)value {
@@ -140,8 +141,7 @@ GADBannerView *bannerView_;
     NSInteger loanPeriodMonths = [self getLoanPeriod:self.valueObject.loanPeriod];
     // 年利率
     float loanRates = [self getLoanRates:self.valueObject.loanRate];
-    //    float totalLoan = [self.totalLoanField.text floatValue] * 10000;
-    float totalLoan = 550000;
+    float totalLoan = [self.valueObject.loanAmountBusiness floatValue] * 10000;
     
     NSInteger loanMethod;
     if ([self.valueObject.repaymentMethod isEqualToString:@"等额本息"]) {
@@ -149,8 +149,6 @@ GADBannerView *bannerView_;
     } else {
         loanMethod = PRINCIPAL;
     }
-
-
 
     self.loan = [FCLoan initLoan:BUSINESS
                        totalLoan:totalLoan

@@ -17,6 +17,9 @@
 - (NSInteger) getLoanPeriod:(NSString *)value;
 - (float) getLoanRates:(NSString *)value;
 
+
+@property (weak, nonatomic) IBOutlet UITextField *textLoanBusiness;
+@property (weak, nonatomic) IBOutlet UITextField *textLoanPortfolio;
 @property (weak, nonatomic) IBOutlet UITableViewCell *loanPeriodCell;
 @property (weak, nonatomic) IBOutlet UILabel *labelLoanRate;
 @property (weak, nonatomic) IBOutlet UILabel *labelPaymentMethod;
@@ -24,5 +27,8 @@
 @property (nonatomic, strong) FCValueObject *valueObject;
 
 @property (nonatomic, unsafe_unretained) id<FCPassValueDelegate> delegate;
+
+
+- (IBAction)backgroundTap:(id)sender;
 
 @end
