@@ -17,9 +17,7 @@
 		B033268D1909EC8200DEC86A /* FCRepaymentListController.m in Sources */ = {isa = PBXBuildFile; fileRef = B033268C1909EC8200DEC86A /* FCRepaymentListController.m */; };
 		B04390A71905F4FF003ADA60 /* FCRepaymentMethodController.m in Sources */ = {isa = PBXBuildFile; fileRef = B04390A61905F4FF003ADA60 /* FCRepaymentMethodController.m */; };
 		B04390A919061B59003ADA60 /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = B04390A819061B59003ADA60 /* readme.md */; };
-		B05D84B119051C3600DDC6DC /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B05D84AF19051C3600DDC6DC /* libMobClickLibrary.a */; };
 		B05D84B319051C6600DDC6DC /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B05D84B219051C6600DDC6DC /* libz.dylib */; };
-		B05D84B419051F3200DDC6DC /* MobClick.h in Sources */ = {isa = PBXBuildFile; fileRef = B05D84B019051C3600DDC6DC /* MobClick.h */; };
 		B088451F18FD6532005CE944 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B088451E18FD6532005CE944 /* Foundation.framework */; };
 		B088452118FD6532005CE944 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B088452018FD6532005CE944 /* CoreGraphics.framework */; };
 		B088452318FD6532005CE944 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B088452218FD6532005CE944 /* UIKit.framework */; };
@@ -69,8 +67,6 @@
 		B04390A51905F4FF003ADA60 /* FCRepaymentMethodController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCRepaymentMethodController.h; sourceTree = "<group>"; };
 		B04390A61905F4FF003ADA60 /* FCRepaymentMethodController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCRepaymentMethodController.m; sourceTree = "<group>"; };
 		B04390A819061B59003ADA60 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.md; sourceTree = "<group>"; };
-		B05D84AF19051C3600DDC6DC /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
-		B05D84B019051C3600DDC6DC /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		B05D84B219051C6600DDC6DC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		B088451B18FD6532005CE944 /* FinancialCalculator4iOS2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinancialCalculator4iOS2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B088451E18FD6532005CE944 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -107,7 +103,6 @@
 				B088452118FD6532005CE944 /* CoreGraphics.framework in Frameworks */,
 				B088452318FD6532005CE944 /* UIKit.framework in Frameworks */,
 				B088451F18FD6532005CE944 /* Foundation.framework in Frameworks */,
-				B05D84B119051C3600DDC6DC /* libMobClickLibrary.a in Frameworks */,
 				00427B5BC617412A8A806A04 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,8 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				B05D84B219051C6600DDC6DC /* libz.dylib */,
-				B05D84AF19051C3600DDC6DC /* libMobClickLibrary.a */,
-				B05D84B019051C3600DDC6DC /* MobClick.h */,
 				B088451E18FD6532005CE944 /* Foundation.framework */,
 				B088452018FD6532005CE944 /* CoreGraphics.framework */,
 				B088452218FD6532005CE944 /* UIKit.framework */,
@@ -319,8 +312,6 @@
 			mainGroup = B088451218FD6532005CE944;
 			productRefGroup = B088451C18FD6532005CE944 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-			);
 			projectRoot = "";
 			targets = (
 				B088451A18FD6532005CE944 /* FinancialCalculator4iOS2 */,
@@ -389,7 +380,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B05D84B419051F3200DDC6DC /* MobClick.h in Sources */,
 				B0C7F22818FE698100A31C85 /* FCValueObject.m in Sources */,
 				B00991271906382500F439EE /* FCRates.m in Sources */,
 				B04390A71905F4FF003ADA60 /* FCRepaymentMethodController.m in Sources */,

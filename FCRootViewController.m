@@ -19,6 +19,7 @@
 @implementation FCRootViewController
 
 #define MY_BANNER_UNIT_ID @"a1535e1d6e4e8dc"
+#define MY_DEVICE_ID_IPHONE5S @"21f3773a9e085798c9d446aca1db7a9c"
 
 
 // 将其中一个声明为实例变量
@@ -38,15 +39,23 @@ GADBannerView *bannerView_;
 
 - (void)viewDidLoad
 {
-
-
-    [super viewDidLoad];
-
     NSLog(@"viewDidLoad");
 
-    // 在屏幕顶部创建标准尺寸的视图。
+    [super viewDidLoad];
+//    显示AdMob广告
+    [self showAdMobView];
+}
+
+/** 显示AdMob广告 **/
+- (void)showAdMobView {
+    // 在屏幕底部创建标准尺寸的视图。
+    bannerView_ = [[GADBannerView alloc]
+            initWithFrame:CGRectMake(0.0,
+                    self.view.frame.size.height - GAD_SIZE_320x50.height,
+                    GAD_SIZE_320x50.width,
+                    GAD_SIZE_320x50.height)];
     // 在GADAdSize.h中对可用的AdSize常量进行说明。
-    bannerView_ = [[GADBannerView alloc] initWithAdSize:kGADAdSizeFullBanner];
+//    bannerView_ = [[GADBannerView alloc] initWithAdSize:kGADAdSizeSmartBannerPortrait];
 
     // 指定广告单元ID。
     bannerView_.adUnitID = MY_BANNER_UNIT_ID;
@@ -57,15 +66,14 @@ GADBannerView *bannerView_;
     [self.view addSubview:bannerView_];
 
     GADRequest *request = [GADRequest request];
-
-// Make the request for a test ad. Put in an identifier for
-// the simulator as well as any devices you want to receive test ads.
-    request.testing = true;
-    request.testDevices = [NSArray arrayWithObjects:GAD_SIMULATOR_ID, nil];
-
     // 启动一般性请求并在其中加载广告。
     [bannerView_ loadRequest:request];
 
+    // 请求测试广告。填入模拟器
+    // 以及接收测试广告的任何设备的标识符。
+    request.testDevices = [NSArray arrayWithObjects:GAD_SIMULATOR_ID, MY_DEVICE_ID_IPHONE5S, nil];
+
+    NSLog(@"%@", @"显示AdMob广告");
 
 }
 
