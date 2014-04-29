@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 letuu.net. All rights reserved.
 //
 
-#import "FCRepaymentListController.h"    "
+#import "FCRepaymentListController.h"
 #import "FCRepaymentDetail.h"
 #import "FCLoan.h"
 

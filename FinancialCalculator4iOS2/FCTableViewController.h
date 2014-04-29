@@ -12,12 +12,6 @@
 @interface FCTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, FCPassValueDelegate>
 
 
-
-- (IBAction)calculateRepaymentAmount:(id)sender;
-- (NSInteger) getLoanPeriod:(NSString *)value;
-- (float) getLoanRates:(NSString *)value;
-
-
 @property (weak, nonatomic) IBOutlet UITextField *textLoanBusiness;
 @property (weak, nonatomic) IBOutlet UITextField *textLoanPortfolio;
 @property (weak, nonatomic) IBOutlet UITableViewCell *loanPeriodCell;

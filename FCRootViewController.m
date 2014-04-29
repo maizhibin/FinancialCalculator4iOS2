@@ -21,7 +21,6 @@
 #define MY_BANNER_UNIT_ID @"a1535e1d6e4e8dc"
 #define MY_DEVICE_ID_IPHONE5S @"21f3773a9e085798c9d446aca1db7a9c"
 
-
 // 将其中一个声明为实例变量
 GADBannerView *bannerView_;
 

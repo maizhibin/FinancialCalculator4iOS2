@@ -130,10 +130,6 @@
         secondViewController.delegate = self;
         secondViewController.valueObject = self.valueObject;
     }
-    
-    if ([[segue identifier] isEqualToString:@"calculateRepaymentAmountSegue"]) {
-        [self calculateRepaymentAmount:self];
-    }
 }
 
 
