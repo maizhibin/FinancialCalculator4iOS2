@@ -47,7 +47,7 @@
     self.labelInterestAmount.text = [NSString stringWithFormat:@"%.2f 万元", loan.interestAmount/10000];
     self.labelRepaymentAmount.text = [NSString stringWithFormat:@"%.2f 万元", loan.repaymentAmount/10000];
     self.labelRepaymentMonthly.text = [NSString stringWithFormat:@"%@", [loan.repaymentDetailList objectAtIndex:1]];
-    self.labelLoanPeriod.text = [NSString stringWithFormat:@"%d", [loan.repaymentDetailList count]];
+    self.labelLoanPeriod.text = [NSString stringWithFormat:@"%lu", (unsigned long)[loan.repaymentDetailList count]];
     self.labelFirstRepayment.text = [NSString stringWithFormat:@"%.2f 元", firstDetail.totalRepayment];
     self.labelLastRepayment.text = [NSString stringWithFormat:@"%.2f 元", lastDetail.totalRepayment];
 
