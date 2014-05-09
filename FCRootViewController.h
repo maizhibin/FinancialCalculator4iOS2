@@ -7,18 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GoogleAnalytics-iOS-SDK/GAITrackedViewController.h>
 #import "FCPassValueDelegate.h"
 #import "GADBannerView.h"
 
 @class FCLoan;
 
-@interface FCRootViewController : UIViewController<FCPassValueDelegate>
+@interface FCRootViewController : GAITrackedViewController<FCPassValueDelegate>
 
 
 - (IBAction)calculateRepaymentAmount:(id)sender;
 //- (NSInteger) getLoanPeriod:(NSString *)value;
 //- (float) getLoanRates:(NSString *)value;
 
+- (IBAction)changeLoanMethod:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *labelLoanRateMemo;
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segChangeLoanMethod;
 @property (nonatomic, strong) FCValueObject *valueObject;
 @property (nonatomic, strong) FCLoan *loan;
 

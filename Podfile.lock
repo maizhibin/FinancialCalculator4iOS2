@@ -1,37 +1,19 @@
 PODS:
-  - AFNetworking (2.2.3):
-    - AFNetworking/NSURLConnection
-    - AFNetworking/NSURLSession
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-    - AFNetworking/UIKit
-  - AFNetworking/NSURLConnection (2.2.3):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.2.3):
-    - AFNetworking/NSURLConnection
-  - AFNetworking/Reachability (2.2.3)
-  - AFNetworking/Security (2.2.3)
-  - AFNetworking/Serialization (2.2.3)
-  - AFNetworking/UIKit (2.2.3):
-    - AFNetworking/NSURLConnection
-    - AFNetworking/NSURLSession
   - Google-AdMob-Ads-SDK (6.8.0)
-  - RegexKitLite (4.0)
+  - GoogleAnalytics-iOS-SDK (3.0.6)
+  - PBFlatUI (1.1.0)
   - UMeng (2.2.1)
 
 DEPENDENCIES:
-  - AFNetworking (~> 2.0)
   - Google-AdMob-Ads-SDK (~> 6.8.0)
-  - RegexKitLite (~> 4.0)
+  - GoogleAnalytics-iOS-SDK (~> 3.0.6)
+  - PBFlatUI (~> 1.1.0)
   - UMeng (~> 2.2.0)
 
 SPEC CHECKSUMS:
-  AFNetworking: ae513199cca79e9d7af2708ccabe2ed075550c42
-  Google-AdMob-Ads-SDK: f02ae039a739c8a5a7d71a13a500e67b282110e3
-  RegexKitLite: b16f029b518614394438e17b7d1df8bfa1e5a81e
+  Google-AdMob-Ads-SDK: e8bacbb6cd42a8d9ca6924745f88a96088a46eec
+  GoogleAnalytics-iOS-SDK: 16dfcc0c4491148bf372edc85a8470cc405ffb72
+  PBFlatUI: 17b80f917881dfd02cf4851af6888d258912261a
   UMeng: 92e00182966f7db39313f7054ae5aca95879726c
 
 COCOAPODS: 0.32.1

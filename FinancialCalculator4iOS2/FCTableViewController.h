@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "FCPassValueDelegate.h"
+#import "FCLoan.h"
 
-@interface FCTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, FCPassValueDelegate>
+@interface FCTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, FCPassValueDelegate> {
+
+    UIButton *doneInKeyboardButton;
+
+}
 
 
 @property (weak, nonatomic) IBOutlet UITextField *textLoanBusiness;
@@ -22,7 +27,13 @@
 
 @property (nonatomic, unsafe_unretained) id<FCPassValueDelegate> delegate;
 
+@property (strong, nonatomic) IBOutlet UITableView *tvLoanSetting;
+@property (weak, nonatomic) IBOutlet UITableViewCell *tvcLoan;
+
+
+@property LOAN_METHOD loanMethod;
 
 - (IBAction)backgroundTap:(id)sender;
 
+- (void)changeLoanMethod:(LOAN_METHOD)loanMethod;
 @end

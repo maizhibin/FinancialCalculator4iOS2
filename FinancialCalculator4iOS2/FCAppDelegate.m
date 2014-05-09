@@ -8,17 +8,29 @@
 
 #import "FCAppDelegate.h"
 #import "MobClick.h"
+#import "GAI.h"
 
 @implementation FCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
     NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     [MobClick setLogEnabled:YES];
     [MobClick setAppVersion:version];
     [MobClick startWithAppkey:@"5354e50956240bd34802628b" reportPolicy:SEND_ON_EXIT channelId:nil];
-    
+
+    // Optional: automatically send uncaught exceptions to Google Analytics.
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+
+    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
+    [GAI sharedInstance].dispatchInterval = 20;
+
+    // Optional: set Logger to VERBOSE for debug information.
+    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+
+    // Initialize tracker. Replace with your tracking ID.
+    [[GAI sharedInstance] trackerWithTrackingId:@"UA-50505561-1"];
+
     return YES;
 }
 							

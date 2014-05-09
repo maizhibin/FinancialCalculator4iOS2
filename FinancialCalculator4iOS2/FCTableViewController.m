@@ -17,9 +17,12 @@
 
 @property(nonatomic, strong) FCLoan *loan;
 
+
 @end
 
 @implementation FCTableViewController
+
+NSInteger rowCount = 4;
 
 @synthesize loanPeriodCell;
 @synthesize labelLoanPeriod;
@@ -29,7 +32,11 @@
 @synthesize textLoanPortfolio;
 @synthesize valueObject;
 
+@synthesize tvLoanSetting;
+@synthesize tvcLoan;
 @synthesize delegate;
+
+@synthesize loanMethod;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -43,7 +50,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
+    self.loanMethod = RESERVE;
+
+
+    //注册通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+
+
+
     self.valueObject = [[FCValueObject alloc] init];
     self.valueObject.loanPeriod = self.labelLoanPeriod.text;
     self.valueObject.loanRate = self.labelLoanRate.text;
@@ -133,6 +149,52 @@
 }
 
 
+
+#pragma mark 键盘
+- (void)handleKeyboardWillHide:(NSNotification *)notification
+{
+    if (doneInKeyboardButton.superview)
+    {
+        [doneInKeyboardButton removeFromSuperview];
+    }
+}
+
+- (void)handleKeyboardDidShow:(NSNotification *)notification
+{
+    if (doneInKeyboardButton == nil)
+    {
+//        doneInKeyboardButton = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
+
+
+        CGFloat screenHeight = [[UIScreen mainScreen] bounds].size.height;
+        if(screenHeight==568.0f){//爱疯5
+            doneInKeyboardButton.frame = CGRectMake(0, 568 - 53, 106, 53);
+        }else{//3.5寸
+            doneInKeyboardButton.frame = CGRectMake(0, 480 - 53, 106, 53);
+        }
+
+        doneInKeyboardButton.adjustsImageWhenHighlighted = NO;
+        //图片直接抠腾讯财付通里面的= =!
+        [doneInKeyboardButton setImage:[UIImage imageNamed:@"btn_done_up@2x.png"] forState:UIControlStateNormal];
+        [doneInKeyboardButton setImage:[UIImage imageNamed:@"btn_done_down@2x.png"] forState:UIControlStateHighlighted];
+        [doneInKeyboardButton addTarget:self action:@selector(finishAction) forControlEvents:UIControlEventTouchUpInside];
+    }
+
+
+    UIWindow* tempWindow = [[[UIApplication sharedApplication] windows] objectAtIndex:1];
+
+    if (doneInKeyboardButton.superview == nil)
+    {
+        [tempWindow addSubview:doneInKeyboardButton];    // 注意这里直接加到window上
+    }
+
+}
+
+
+-(void)finishAction{
+    [[[UIApplication sharedApplication] keyWindow] endEditing:YES];//关闭键盘
+}
+
 #pragma mark - Table view data source
 
 
@@ -151,6 +213,67 @@
     [super viewWillDisappear:animated];
     [MobClick endLogPageView:@"RootView"];
 }
+
+//- (void)keyboardWillShow:(NSNotification *)note {
+    // create custom button
+//    UIButton *doneButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    doneButton.frame = CGRectMake(0, 163, 106, 53);
+//    doneButton.adjustsImageWhenHighlighted = NO;
+//    [doneButton setImage:[UIImage imageNamed:@"DoneUp.png"] forState:UIControlStateNormal];
+//    [doneButton setImage:[UIImage imageNamed:@"DoneDown.png"] forState:UIControlStateHighlighted];
+//    [doneButton addTarget:self action:@selector(doneButton:) forControlEvents:UIControlEventTouchUpInside];
+
+    // locate keyboard view
+//    UIWindow* tempWindow = [[[UIApplication sharedApplication] windows] objectAtIndex:1];
+//    UIView* keyboard;
+//    for(int i=0; i<[tempWindow.subviews count]; i++) {
+//        keyboard = [tempWindow.subviews objectAtIndex:i];
+//        keyboard view found; add the custom button to it
+//        if([[keyboard description] hasPrefix:@"<UIKeyboard"] == YES)
+//            [keyboard addSubview:doneButton];
+//    }
+//}
+
+
+- (void)changeLoanMethod:(LOAN_METHOD)loanMethod{
+    self.loanMethod = loanMethod;
+    if (loanMethod == RESERVE) {
+        tvcLoan.hidden = YES;
+    } else {
+        tvcLoan.hidden = NO;
+//        if (rowCount == 3) rowCount = 4;
+    }
+    NSLog(@"rowCount = %ld", (long)rowCount);
+    [tvLoanSetting reloadData];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+//    NSLog(@"rowCount = %ld", (long)rowCount);
+    return rowCount;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    CGRect orginSize;
+    orginSize = cell.frame;
+
+    NSLog(@"Cell高度=%f", orginSize.size.height);
+    if (self.loanMethod == RESERVE && [cell.reuseIdentifier isEqualToString:@"tvcLoan"]) {
+        cell.hidden = YES;
+    }
+//  else {
+//        if (indexPath.row == 2 && cell.hidden == NO) {
+//            orginSize.size.height = 40;
+//        } else if(indexPath.row == 1) {
+//            orginSize.size.height = 70;
+//        }
+//    }
+    cell.frame = orginSize;
+    return cell.frame.size.height;
+}
+
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -181,7 +304,7 @@
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
 }
 */
 
@@ -211,5 +334,10 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (void)dealloc {
+    //反注册通知
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 
 @end

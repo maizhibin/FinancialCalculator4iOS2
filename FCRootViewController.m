@@ -10,6 +10,7 @@
 #import "FCLoan.h"
 #import "FCTableViewController.h"
 #import "FCRepaymentDetailViewController.h"
+#import "FCLoanRateController.h"
 
 @interface FCRootViewController ()
 
@@ -18,11 +19,17 @@
 
 @implementation FCRootViewController
 
+
+
+
 #define MY_BANNER_UNIT_ID @"a1535e1d6e4e8dc"
 #define MY_DEVICE_ID_IPHONE5S @"21f3773a9e085798c9d446aca1db7a9c"
 
 // 将其中一个声明为实例变量
 GADBannerView *bannerView_;
+
+@synthesize labelLoanRateMemo;
+@synthesize segChangeLoanMethod;
 
 @synthesize valueObject;
 @synthesize loan;
@@ -40,6 +47,14 @@ GADBannerView *bannerView_;
 {
     NSLog(@"viewDidLoad");
 
+    if (self.segChangeLoanMethod.selectedSegmentIndex == 0) {
+        self.labelLoanRateMemo.hidden = YES;
+        self.labelLoanRateMemo.hidden = YES;
+    } else {
+        self.labelLoanRateMemo.hidden = NO;
+        self.labelLoanRateMemo.hidden = NO;
+    }
+
     [super viewDidLoad];
 //    显示AdMob广告
     [self showAdMobView];
@@ -54,7 +69,7 @@ GADBannerView *bannerView_;
                     GAD_SIZE_320x50.width,
                     GAD_SIZE_320x50.height)];
     // 在GADAdSize.h中对可用的AdSize常量进行说明。
-//    bannerView_ = [[GADBannerView alloc] initWithAdSize:kGADAdSizeSmartBannerPortrait];
+    //    bannerView_ = [[GADBannerView alloc] initWithAdSize:kGADAdSizeSmartBannerPortrait];
 
     // 指定广告单元ID。
     bannerView_.adUnitID = MY_BANNER_UNIT_ID;
@@ -73,7 +88,6 @@ GADBannerView *bannerView_;
     request.testDevices = [NSArray arrayWithObjects:GAD_SIMULATOR_ID, MY_DEVICE_ID_IPHONE5S, nil];
 
     NSLog(@"%@", @"显示AdMob广告");
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -96,7 +110,10 @@ GADBannerView *bannerView_;
         NSLog(@"%@", secondViewController.valueObject.repaymentMethod);
     }
 
-    if ([[segue identifier] isEqualToString:@"loanSettingSegue"]) {
+    if ([[segue identifier] isEqualToString:@"loanRateSegue"]) {
+        FCLoanRateController *secondViewController = [segue destinationViewController];
+        secondViewController.delegate = self;
+        secondViewController.loan = self.loan;
 
     }
     if ([[segue identifier] isEqualToString:@"calculateRepaymentAmountSegue"]) {
@@ -164,7 +181,27 @@ GADBannerView *bannerView_;
     //    [self.buttonViewRepaymentDetailList setHidden:false];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.screenName = @"房贷计算器主界面";
+}
 
+
+- (IBAction)changeLoanMethod:(id)sender {
+    NSLog(@"%ld", (long)[sender selectedSegmentIndex]);
+
+    FCTableViewController *controller = [[self childViewControllers] objectAtIndex:0];
+    [controller changeLoanMethod:RESERVE];
+    if ([sender selectedSegmentIndex] == 0) {
+        labelLoanRateMemo.hidden = YES;
+    } else if ([sender selectedSegmentIndex] == 1) {
+        labelLoanRateMemo.hidden = NO;
+        [controller changeLoanMethod:BUSINESS];
+    } else if ([sender selectedSegmentIndex] == 2) {
+        labelLoanRateMemo.hidden = NO;
+        [controller changeLoanMethod:PORTFOLIO];
+    }
+}
 
 /*
 #pragma mark - Navigation

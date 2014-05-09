@@ -8,9 +8,12 @@
 //  Copyright (c) 2014年 letuu.net. All rights reserved.
 //
 
+#import <GoogleAnalytics-iOS-SDK/GAITracker.h>
+#import <GoogleAnalytics-iOS-SDK/GAI.h>
 #import "FCLoanPeriodController.h"
-#import "FCValueObject.h"
 #import "MobClick.h"
+#import "GAIDictionaryBuilder.h"
+#import "GAIFields.h"
 
 @interface FCLoanPeriodController ()
 
@@ -142,6 +145,16 @@
 {
     [super viewWillAppear:animated];
     [MobClick beginLogPageView:@"LoanPeriodView"];
+
+    // returns the same tracker you created in your app delegate
+    // defaultTracker originally declared in AppDelegate.m
+    id tracker = [[GAI sharedInstance] defaultTracker];
+    // This screen name value will remain set on the tracker and sent with
+    // hits until it is set to a new value or to nil.
+    [tracker set:kGAIScreenName value:@"选择贷款周期"];
+    // manual screen tracking
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+
 }
 - (void)viewWillDisappear:(BOOL)animated
 {

@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "FCPassValueDelegate.h"
 
+@class FCLoan;
+
 @interface FCLoanRateController : UITableViewController
 
 @property (nonatomic, strong) FCValueObject *valueObject;
+@property (nonatomic, strong) FCLoan *loan;
 @property (nonatomic, unsafe_unretained) id<FCPassValueDelegate> delegate;
 
 

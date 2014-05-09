@@ -7,6 +7,7 @@
 //
 
 #import "FCLoanRateController.h"
+#import "FCLoan.h"
 
 @interface FCLoanRateController ()
 
@@ -17,6 +18,7 @@
 
 @synthesize delegate;
 @synthesize valueObject;
+@synthesize loan;
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -56,21 +58,17 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return [loan.array_3 count];
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+//
+//    // Configure the cell...
+//
+//    return cell;
+//}
 
 /*
 // Override to support conditional editing of the table view.
