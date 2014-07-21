@@ -6,6 +6,7 @@
 //  Copyright (c) 2014年 letuu.net. All rights reserved.
 //
 
+#import <Google-AdMob-Ads-SDK/GADBannerView.h>
 #import "FCTableViewController.h"
 #import "FCLoanPeriodController.h"
 #import "FCRepaymentMethodController.h"
@@ -37,6 +38,8 @@ NSInteger rowCount = 4;
 @synthesize delegate;
 
 @synthesize loanMethod;
+
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -74,6 +77,7 @@ NSInteger rowCount = 4;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
 }
 
 - (void)didReceiveMemoryWarning
